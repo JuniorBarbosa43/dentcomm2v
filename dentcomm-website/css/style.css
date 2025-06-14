@@ -2258,3 +2258,175 @@ input, textarea, select {
 .product-summary-card__cta {
     margin-top: auto; /* Empurra a CTA para o final do card */
 }
+
+/* ETAPA 2: MELHORIAS EM PRODUTOS E CONVERSÃO */
+
+/* Novas estilizações para páginas de produto individuais (produto-*.html) */
+.product-page main {
+    padding-top: var(--header-height);
+}
+
+.product-header {
+    text-align: center;
+    padding: 4rem var(--container-padding);
+    background: var(--gradient-hero);
+}
+
+.breadcrumb {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--primary-gray);
+    font-weight: 500;
+}
+.breadcrumb:hover {
+    color: var(--primary-cyan);
+}
+
+.product-header__objective {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 1rem auto 0;
+    color: var(--primary-gray);
+}
+
+.product-details {
+    padding: var(--section-padding);
+}
+
+.product-details__container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+/* Coluna da esquerda com informações e nova imagem */
+.product-details__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.product-details__visual {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.product-details__visual img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+}
+
+
+/* Coluna da direita com card de investimento */
+.product-details__investment .investment-card {
+    position: sticky;
+    top: calc(var(--header-height) + 2rem); /* Efeito "flutuante" ao rolar */
+    background: var(--bg-card);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    border: 2px solid var(--primary-cyan);
+}
+
+.investment-card h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.investment-card__price {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.investment-card__details {
+    margin-bottom: 2rem;
+}
+.investment-card__details p {
+    margin-bottom: 0.75rem;
+    color: var(--primary-gray);
+    border-bottom: 1px dashed rgba(0,0,0,0.1);
+    padding-bottom: 0.75rem;
+}
+[data-theme="dark"] .investment-card__details p {
+    border-bottom-color: rgba(255,255,255,0.1);
+}
+
+.investment-card .btn {
+    width: 100%;
+}
+
+
+/* Seção de Entregáveis */
+.product-deliverables {
+    padding: var(--section-padding);
+    background-color: var(--bg-light);
+}
+
+.deliverables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.deliverable-card {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--primary-cyan);
+    transition: var(--transition-smooth);
+}
+.deliverable-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.deliverable-card h4 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.check-list {
+    list-style: none;
+    padding-left: 0;
+}
+.check-list li {
+    margin-bottom: 0.75rem;
+    color: var(--primary-gray);
+    position: relative;
+    padding-left: 1.75rem;
+}
+.check-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--primary-cyan);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Responsividade para a nova estrutura */
+@media (max-width: 992px) {
+    .product-details__container {
+        grid-template-columns: 1fr;
+    }
+    .product-details__investment .investment-card {
+        position: static;
+        width: 100%;
+    }
+}

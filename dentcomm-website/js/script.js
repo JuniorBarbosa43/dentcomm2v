@@ -1,6 +1,236 @@
 // DENTCOMM - JAVASCRIPT MODERNO
 // Funcionalidades interativas e animações
 
+// =================================================================================
+// ETAPA 3: TRADUÇÃO E INTERNACIONALIZAÇÃO (i18n)
+// =================================================================================
+const translations = {
+    pt: {
+        // Navegação
+        navHome: 'Início',
+        navAbout: 'Quem Somos',
+        navProducts: 'Produtos',
+        navContact: 'Contato',
+        // Geral
+        productBreadcrumb: '← Voltar para todos os produtos',
+        investmentTitle: 'Investimento',
+        adsBudgetTitle: 'Verba de anúncios:',
+        contractTitle: 'Contrato mínimo:',
+        // Página de Produtos
+        productsTitle: 'Soluções inteligentes para cada fase da sua clínica',
+        productsSubtitle: 'Do dentista que está começando no digital à clínica que busca escalar sua operação. Temos o plano perfeito para o seu momento atual.',
+        compareTitle: 'Compare nossas soluções',
+        compareSubtitle: 'Encontre a solução ideal para o seu perfil e objetivos.',
+        // Plano Base
+        baseObjective: 'A estrutura essencial para qualquer dentista atrair pacientes, construir autoridade e entender o retorno de suas ações de forma prática.',
+        baseTargetTitle: 'Para quem é o plano Base?',
+        baseTarget1: 'Dentistas que estão começando ou reestruturando sua presença digital.',
+        baseTarget2: 'Profissionais que desejam captar pacientes ativamente pelo WhatsApp.',
+        baseTarget3: 'Consultórios sem equipe ou processos comerciais bem definidos.',
+        baseTarget4: 'Quem precisa de resultados, mas com baixo risco e complexidade.',
+        basePainsTitle: 'Principais Dores que Resolvemos',
+        basePain1: 'Publica conteúdo, mas não vê retorno em pacientes.',
+        basePain2: 'Sente que perde pacientes por desorganização no atendimento.',
+        basePain3: 'Faz "marketing", mas não sabe se realmente dá resultado financeiro.',
+        basePain4: 'Não tem clareza de como transformar seguidores em agenda cheia.',
+        basePrice: 'A partir de <strong>$350</strong> /mês',
+        baseAds: 'USD 200 (sugerido)',
+        baseContract: '3 meses',
+        baseBtn: 'Falar com um Consultor',
+        deliverablesTitle: 'O que você recebe no plano Base',
+        baseDeliv1Title: 'Estrutura de Captação e Atendimento',
+        baseDeliv1Item1: 'Landing page por especialidade com prova social e botão de WhatsApp.',
+        baseDeliv1Item2: 'Formulário de qualificação integrado ao CRM.',
+        baseDeliv1Item3: 'Implantação de funil de vendas com etapas odontológicas personalizadas.',
+        // ... (e assim por diante para todos os textos)
+    },
+    es: {
+        // Navegación
+        navHome: 'Inicio',
+        navAbout: 'Quiénes Somos',
+        navProducts: 'Productos',
+        navContact: 'Contacto',
+        // General
+        productBreadcrumb: '← Volver a todos los productos',
+        investmentTitle: 'Inversión',
+        adsBudgetTitle: 'Presupuesto de anuncios:',
+        contractTitle: 'Contrato mínimo:',
+        // Página de Productos
+        productsTitle: 'Soluciones inteligentes para cada fase de tu clínica',
+        productsSubtitle: 'Desde el dentista que está comenzando en el mundo digital hasta la clínica que busca escalar su operación. Tenemos el plan perfecto para tu momento actual.',
+        compareTitle: 'Compara nuestras soluciones',
+        compareSubtitle: 'Encuentra la solución ideal para tu perfil y objetivos.',
+        // Plan Base
+        baseObjective: 'La estructura esencial para que cualquier dentista atraiga pacientes, construya autoridad digital y entienda, en la práctica, el retorno de sus acciones.',
+        baseTargetTitle: '¿Para quién es el plan Base?',
+        baseTarget1: 'Dentistas que están comenzando o reestructurando su presencia digital.',
+        baseTarget2: 'Profesionales que desean captar pacientes activamente por WhatsApp.',
+        baseTarget3: 'Consultorios sin equipo o procesos comerciales bien definidos.',
+        baseTarget4: 'Quienes necesitan resultados, pero con bajo riesgo y complejidad.',
+        basePainsTitle: 'Principales Dolores que Resolvemos',
+        basePain1: 'Publica contenido, pero no ve retorno en pacientes.',
+        basePain2: 'Siente que pierde pacientes por desorganización en la atención.',
+        basePain3: 'Hace "marketing", pero no sabe si realmente genera resultados financieros.',
+        basePain4: 'No tiene claro cómo transformar seguidores en una agenda llena.',
+        basePrice: 'Desde <strong>$350</strong> /mes',
+        baseAds: 'USD 200 (sugerido)',
+        baseContract: '3 meses',
+        baseBtn: 'Hablar con un Consultor',
+        deliverablesTitle: 'Lo que recibes en el plan Base',
+        baseDeliv1Title: 'Estructura de Captación y Atención',
+        baseDeliv1Item1: 'Landing page por especialidad con prueba social y botón de WhatsApp.',
+        baseDeliv1Item2: 'Formulario de cualificación integrado al CRM.',
+        baseDeliv1Item3: 'Implementación de embudo de ventas con etapas odontológicas personalizadas.',
+        // ... (y así sucesivamente para todos los textos)
+    }
+};
+
+/**
+ * Define o idioma da página com base na seleção (pt ou es).
+ * @param {string} lang - O idioma a ser aplicado ('pt' ou 'es').
+ */
+function setLanguage(lang) {
+    document.documentElement.lang = lang; // Define o atributo lang do HTML
+    const elements = document.querySelectorAll('[data-key]');
+    elements.forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (translations[lang] && translations[lang][key]) {
+            // Verifica se o elemento é um input ou textarea para tratar o placeholder
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                el.placeholder = translations[lang][key];
+            } else {
+                el.innerHTML = translations[lang][key];
+            }
+        }
+    });
+}
+
+function initLanguageSwitcher() {
+    const langPtBtn = document.getElementById('lang-pt');
+    const langEsBtn = document.getElementById('lang-es');
+
+    // Função para atualizar a UI dos botões
+    const updateButtons = (selectedLang) => {
+        if (selectedLang === 'es') {
+            langEsBtn.classList.add('active');
+            langPtBtn.classList.remove('active');
+        } else {
+            langPtBtn.classList.add('active');
+            langEsBtn.classList.remove('active');
+        }
+    };
+
+    langPtBtn.addEventListener('click', () => {
+        setLanguage('pt');
+        localStorage.setItem('language', 'pt');
+        updateButtons('pt');
+    });
+
+    langEsBtn.addEventListener('click', () => {
+        setLanguage('es');
+        localStorage.setItem('language', 'es');
+        updateButtons('es');
+    });
+
+    // Ao carregar a página, verifica o idioma salvo
+    const savedLang = localStorage.getItem('language') || 'pt';
+    setLanguage(savedLang);
+    updateButtons(savedLang);
+}
+
+
+// INICIALIZAÇÃO GERAL
+document.addEventListener('DOMContentLoaded', function() {
+    // Funções existentes
+    initScrollReveal();
+    initHeaderScroll();
+    initMobileMenu();
+    initThemeToggle();
+    initROICalculator();
+    initTestimonialSlider();
+    initNewsletterForm();
+    initContactForm();
+    initFAQ();
+    initSmoothScroll();
+    
+    // ETAPA 3: Nova função de tradução
+    initLanguageSwitcher(); 
+});
+
+
+// 1. SCROLL REVEAL ANIMATIONS
+function initScrollReveal() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// 2. HEADER SCROLL EFFECT
+function initHeaderScroll() {
+    const header = document.querySelector('.header');
+    if (!header) return;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+}
+
+// 3. MOBILE MENU
+function initMobileMenu() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav__list');
+    if (!navToggle || !navList) return;
+
+    navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navToggle.classList.toggle('active');
+        navList.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav__link').forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle.classList.remove('active');
+            navList.classList.remove('active');
+        });
+    });
+}
+
+// 4. THEME TOGGLE
+function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+    
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    if (savedTheme === 'dark') {
+        themeToggle.classList.add('active');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        themeToggle.classList.toggle('active');
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Inicialização
     initScrollReveal();

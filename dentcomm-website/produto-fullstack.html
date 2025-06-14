@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DentComm Fullstack - Nossas Soluções</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -22,13 +19,14 @@
             </a>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li><a href="index.html" class="nav__link" data-key="navHome">Início</a></li>
-                    <li><a href="quem-somos.html" class="nav__link" data-key="navAbout">Quem Somos</a></li>
-                    <li><a href="produtos.html" class="nav__link active" data-key="navProducts">Produtos</a></li>
-                    <li><a href="contato.html" class="nav__link" data-key="navContact">Contato</a></li>
+                    <li><a href="index.html" class="nav__link">Início</a></li>
+                    <li><a href="quem-somos.html" class="nav__link">Quem Somos</a></li>
+                    <li><a href="produtos.html" class="nav__link active">Produtos</a></li>
+                    <li><a href="contato.html" class="nav__link">Contato</a></li>
                 </ul>
             </nav>
             <div class="header__actions">
+                <div class="theme-toggle" id="theme-toggle" aria-label="Alternar tema"></div>
                 <div class="lang-switcher">
                     <button id="lang-pt" class="lang-switcher__btn active">PT</button>
                     <span>/</span>
@@ -44,47 +42,51 @@
     </header>
 
     <main class="product-page">
-
         <section class="product-header">
             <div class="container">
-                <a href="produtos.html" class="breadcrumb" data-key="productBreadcrumb">&larr; Voltar para todos os produtos</a>
+                <a href="produtos.html" class="breadcrumb">← Voltar para todos os produtos</a>
                 <h1 class="product-header__title">DentComm <span class="highlight">Fullstack</span></h1>
-                <p class="product-header__objective" data-key="fullstackObjective">Assumir completamente a operação digital da clínica, da estratégia à execução, para que você tenha escala, qualidade, previsibilidade e, acima de tudo, tempo livre.</p>
+                <p class="product-header__objective">Assumir completamente a operação digital da clínica, da estratégia à execução, para que você tenha escala, qualidade, previsibilidade e, acima de tudo, tempo livre.</p>
             </div>
         </section>
 
         <section class="product-details">
             <div class="container product-details__container">
-                <div class="product-details__info scroll-reveal">
-                    <div class="info-block">
-                        <h3 data-key="fullstackTargetTitle">Para quem é o plano Fullstack?</h3>
-                        <ul class="icon-list">
-                            <li data-key="fullstackTarget1">Clínicas com múltiplos dentistas, especialidades e recepcionistas.</li>
-                            <li data-key="fullstackTarget2">Dentistas com foco total no atendimento e sem tempo para a operação comercial.</li>
-                            <li data-key="fullstackTarget3">Estruturas que exigem delegação total com confiança e geração de resultados.</li>
-                            <li data-key="fullstackTarget4">Grupos odontológicos que buscam padronização, escala e reputação digital.</li>
+                <div class="product-details__content">
+                    <div class="product-details__visual scroll-reveal">
+                        <img src="https://images.unsplash.com/photo-1556742502-ec7c0e2426e2?q=80&w=1974&auto=format&fit=crop" alt="Gestor dedicado apresentando resultados do plano Fullstack">
+                    </div>
+
+                    <div class="info-block scroll-reveal">
+                        <h3>Para quem é o plano Fullstack?</h3>
+                        <ul class="check-list">
+                            <li>Clínicas com múltiplos dentistas, especialidades e recepcionistas.</li>
+                            <li>Dentistas com foco total no atendimento e sem tempo para a operação comercial.</li>
+                            <li>Estruturas que exigem delegação total com confiança e geração de resultados.</li>
+                            <li>Grupos odontológicos que buscam padronização, escala e reputação digital.</li>
                         </ul>
                     </div>
-                    <div class="info-block">
-                        <h3 data-key="fullstackPainsTitle">Principais Dores que Resolvemos</h3>
-                        <ul class="icon-list">
-                            <li data-key="fullstackPain1">Falta de tempo para cuidar da área comercial e do marketing.</li>
-                            <li data-key="fullstackPain2">Inconsistência na agenda entre diferentes profissionais e especialidades.</li>
-                            <li data-key="fullstackPain3">Atendimento desorganizado e com conversão abaixo do potencial.</li>
-                            <li data-key="fullstackPain4">Falta de um gestor que "puxe" a operação com foco em resultado.</li>
-                            <li data-key="fullstackPain5">Crescimento baseado em "achismos", sem dados, controle e clareza de ROI.</li>
+                    <div class="info-block scroll-reveal">
+                        <h3>Principais Dores que Resolvemos</h3>
+                        <ul class="check-list">
+                            <li>Falta de tempo para cuidar da área comercial e do marketing.</li>
+                            <li>Inconsistência na agenda entre diferentes profissionais e especialidades.</li>
+                            <li>Atendimento desorganizado e com conversão abaixo do potencial.</li>
+                            <li>Falta de um gestor que "puxe" a operação com foco em resultado.</li>
+                            <li>Crescimento baseado em "achismos", sem dados, controle e clareza de ROI.</li>
                         </ul>
                     </div>
                 </div>
-                <div class="product-details__investment scroll-reveal">
-                    <div class="investment-card">
-                        <h3 data-key="investmentTitle">Investimento</h3>
-                        <div class="investment-card__price" data-key="fullstackPrice">A partir de <strong>$2.500</strong> /mês</div>
+
+                <div class="product-details__investment">
+                    <div class="investment-card scroll-reveal">
+                        <h3>Investimento</h3>
+                        <div class="investment-card__price">A partir de <strong>$2.500</strong> /mês</div>
                         <div class="investment-card__details">
-                            <p><strong data-key="adsBudgetTitle">Verba de anúncios:</strong> <span data-key="fullstackAds">USD 1500 (sugerido)</span></p>
-                            <p><strong data-key="contractTitle">Contrato mínimo:</strong> <span data-key="fullstackContract">6 meses</span></p>
+                            <p><strong>Verba de anúncios:</strong> USD 1500 (sugerido)</p>
+                            <p><strong>Contrato mínimo:</strong> 6 meses</p>
                         </div>
-                        <a href="https://wa.me/5511999998888?text=Ol%C3%A1%21+Tenho+interesse+no+plano+DentComm+Fullstack." target="_blank" class="btn btn--primary" data-key="fullstackBtn">Quero contratar o plano Fullstack</a>
+                        <a href="contato.html" class="btn btn--primary btn--large">Falar com um Consultor</a>
                     </div>
                 </div>
             </div>
@@ -92,54 +94,89 @@
 
         <section class="product-deliverables">
             <div class="container">
-                <h2 class="section-title" data-key="deliverablesTitleFullstack">O que você <span class="highlight">recebe</span> no plano Fullstack</h2>
+                <h2 class="section-title">O que você <span class="highlight">recebe</span></h2>
                 <div class="deliverables-grid">
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="fullstackDeliv1Title">Operação 100% Gerenciada</h4><ul class="check-list"><li data-key="fullstackDeliv1Item1">DentComm assume toda a rotina de marketing e pré-vendas.</li><li data-key="fullstackDeliv1Item2">Interação direta com a recepção para feedbacks e alinhamentos.</li><li data-key="fullstackDeliv1Item3">Consultor exclusivo DentComm dedicado ao seu projeto.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="fullstackDeliv2Title">Conteúdo e Imagem Premium</h4><ul class="check-list"><li data-key="fullstackDeliv2Item1">8 artes por semana (feed, stories, Reels, campanhas).</li><li data-key="fullstackDeliv2Item2">Vídeos, animações e kits gráficos sob demanda.</li><li data-key="fullstackDeliv2Item3">Redesign contínuo para ações sazonais e promoções.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="fullstackDeliv3Title">Performance Máxima de Tráfego</h4><ul class="check-list"><li data-key="fullstackDeliv3Item1">Campanhas ilimitadas no Meta Ads, Google Ads e YouTube.</li><li data-key="fullstackDeliv3Item2">A/B testing contínuo de criativos, públicos e ofertas.</li><li data-key="fullstackDeliv3Item3">Gestão de orçamento, escalabilidade e reengajamento automático.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="fullstackDeliv4Title">Páginas de Conversão Ilimitadas</h4><ul class="check-list"><li data-key="fullstackDeliv4Item1">Criação ilimitada de landing pages personalizadas por campanha.</li><li data-key="fullstackDeliv4Item2">Integração total com CRM, WhatsApp e métricas.</li><li data-key="fullstackDeliv4Item3">Otimização quinzenal com base no desempenho real.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="fullstackDeliv5Title">CRM + Pré-venda Gerenciada</h4><ul class="check-list"><li data-key="fullstackDeliv5Item1">DentComm assume o gerenciamento de leads no CRM.</li><li data-key="fullstackDeliv5Item2">Triagem, qualificação e agendamento ativo via WhatsApp ou e-mail.</li><li data-key="fullstackDeliv5Item3">Comunicação direta e diária com a clínica.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="fullstackDeliv6Title">Nutrição e Reativação Full</h4><ul class="check-list"><li data-key="fullstackDeliv6Item1">Campanhas ilimitadas de e-mail e WhatsApp, com IA aplicada.</li><li data-key="fullstackDeliv6Item2">Leads tratados ativamente com múltiplos pontos de contato.</li><li data-key="fullstackDeliv6Item3">Reativação da base antiga com campanhas especiais mensais.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="fullstackDeliv7Title">Inteligência Estratégica</h4><ul class="check-list"><li data-key="fullstackDeliv7Item1">IA aplicada em toda a jornada do lead (previsão, sugestão, etc.).</li><li data-key="fullstackDeliv7Item2">Pontuação de leads com rastreamento de comportamento.</li><li data-key="fullstackDeliv7Item3">Acesso completo à IA do RD Station e relatórios preditivos.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="fullstackDeliv8Title">Suporte Total à Clínica</h4><ul class="check-list"><li data-key="fullstackDeliv8Item1">Treinamento da equipe interna apenas onde for necessário.</li><li data-key="fullstackDeliv8Item2">Consultoria de posicionamento comercial e estrutura de atendimento.</li><li data-key="fullstackDeliv8Item3">Participação da DentComm em reuniões internas da clínica.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="fullstackDeliv9Title">Reuniões de Alta Performance</h4><ul class="check-list"><li data-key="fullstackDeliv9Item1">Reuniões mensais ilimitadas, conforme a necessidade da operação.</li><li data-key="fullstackDeliv9Item2">Definição de estratégia, performance e metas de conversão.</li><li data-key="fullstackDeliv9Item3">Suporte direto a sócios, diretores ou gestores comerciais.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="fullstackDeliv10Title">Relatórios e Painéis Avançados</h4><ul class="check-list"><li data-key="fullstackDeliv10Item1">Dados completos: CPL, CPCV, CAC, taxa de conversão, faturamento.</li><li data-key="fullstackDeliv10Item2">Dashboard interativo com dados em tempo real.</li><li data-key="fullstackDeliv10Item3">Exportação de relatórios gerenciais para tomada de decisão.</li></ul></div>
+                    <div class="deliverable-card scroll-reveal">
+                        <h4>Operação 100% Gerenciada</h4>
+                        <ul class="check-list">
+                            <li>DentComm assume toda a rotina de marketing e pré-vendas.</li>
+                            <li>Interação direta com a recepção para feedbacks e alinhamentos.</li>
+                            <li>Consultor exclusivo DentComm dedicado ao seu projeto.</li>
+                        </ul>
+                    </div>
+                    <div class="deliverable-card scroll-reveal">
+                        <h4>Conteúdo e Imagem Premium</h4>
+                        <ul class="check-list">
+                            <li>8 artes por semana (feed, stories, Reels, campanhas).</li>
+                            <li>Vídeos, animações e kits gráficos sob demanda.</li>
+                            <li>Redesign contínuo para ações sazonais e promoções.</li>
+                        </ul>
+                    </div>
+                    <div class="deliverable-card scroll-reveal">
+                        <h4>Performance Máxima de Tráfego</h4>
+                        <ul class="check-list">
+                            <li>Campanhas ilimitadas no Meta Ads, Google Ads e YouTube.</li>
+                            <li>A/B testing contínuo de criativos, públicos e ofertas.</li>
+                            <li>Gestão de orçamento, escalabilidade e reengajamento automático.</li>
+                        </ul>
+                    </div>
+                    <div class="deliverable-card scroll-reveal">
+                        <h4>CRM + Pré-venda Gerenciada</h4>
+                        <ul class="check-list">
+                            <li>DentComm assume o gerenciamento de leads no CRM.</li>
+                            <li>Triagem, qualificação e agendamento ativo via WhatsApp ou e-mail.</li>
+                            <li>Comunicação direta e diária com a clínica.</li>
+                        </ul>
+                    </div>
+                    <div class="deliverable-card scroll-reveal">
+                        <h4>Inteligência Estratégica</h4>
+                        <ul class="check-list">
+                            <li>IA aplicada em toda a jornada do lead (previsão, sugestão, etc.).</li>
+                            <li>Pontuação de leads com rastreamento de comportamento.</li>
+                            <li>Acesso completo à IA do RD Station e relatórios preditivos.</li>
+                        </ul>
+                    </div>
+                    <div class="deliverable-card scroll-reveal">
+                        <h4>Suporte Total à Clínica</h4>
+                        <ul class="check-list">
+                            <li>Treinamento da equipe interna apenas onde for necessário.</li>
+                            <li>Consultoria de posicionamento comercial e estrutura de atendimento.</li>
+                            <li>Participação da DentComm em reuniões internas da clínica.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
-
     </main>
     
     <footer class="footer">
         <div class="container footer__container">
             <div class="footer__brand">
-                <a href="index.html">
-                    <img src="https://svgshare.com/i/18An.svg" alt="Logo DentComm" class="footer__logo">
-                </a>
-                <p class="footer__tagline" data-key="footerTagline">Marketing com propósito. Crescimento com consciência.</p>
+                <a href="index.html"><img src="https://svgshare.com/i/18An.svg" alt="Logo DentComm" class="footer__logo"></a>
+                <p class="footer__tagline">Marketing com propósito. Crescimento com consciência.</p>
             </div>
             <div class="footer__links">
-                <h4 data-key="footerNav">Navegação</h4>
+                <h4>Navegação</h4>
                 <ul>
-                    <li><a href="index.html" data-key="navHome">Início</a></li>
-                    <li><a href="quem-somos.html" data-key="navAbout">Quem Somos</a></li>
-                    <li><a href="produtos.html" data-key="navProducts">Produtos</a></li>
-                    <li><a href="contato.html" data-key="navContact">Contato</a></li>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
                 </ul>
             </div>
             <div class="footer__contact">
-                <h4 data-key="footerContact">Contato</h4>
+                <h4>Contato</h4>
                 <p>contato@dentcomm.com</p>
                 <p>+55 (11) 99999-8888</p>
             </div>
         </div>
         <div class="footer__bottom">
-            <p>&copy; 2024 DentComm. <span data-key="footerRights">Todos os direitos reservados.</span></p>
+            <p>&copy; 2024 DentComm. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <a href="https://wa.me/5511999998888" class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 .5c58.4 0 112.2 22.8 152.6 63.1l-2.1 1.9c-1.6 1.4-3.2 2.8-4.9 4.1-18.1 13.9-33.1 31.2-44.2 50.9-12.8 22.8-19.1 48.4-19.1 74.3 0 5.2-.2 10.5-.5 15.6-3.3 54-28.7 100.2-69.5 133.2-4.2 3.4-8.5 6.6-13.1 9.5-2.9 1.9-5.8 3.7-8.8 5.3-33.1 18.9-70.5 28.7-109.1 28.7-35.8 0-70.3-8.9-99.5-25.6l-2.9-1.7-107.5 28.1 28.8-104.9-1.9-3.1C55.2 355 34.4 309.8 34.4 256c0-105.7 85.7-191.5 191.5-191.5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/></svg>
     </a>
 
 </body>

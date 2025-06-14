@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DentComm Core360 - Nossas Soluções</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -22,13 +19,14 @@
             </a>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li><a href="index.html" class="nav__link" data-key="navHome">Início</a></li>
-                    <li><a href="quem-somos.html" class="nav__link" data-key="navAbout">Quem Somos</a></li>
-                    <li><a href="produtos.html" class="nav__link active" data-key="navProducts">Produtos</a></li>
-                    <li><a href="contato.html" class="nav__link" data-key="navContact">Contato</a></li>
+                    <li><a href="index.html" class="nav__link">Início</a></li>
+                    <li><a href="quem-somos.html" class="nav__link">Quem Somos</a></li>
+                    <li><a href="produtos.html" class="nav__link active">Produtos</a></li>
+                    <li><a href="contato.html" class="nav__link">Contato</a></li>
                 </ul>
             </nav>
             <div class="header__actions">
+                <div class="theme-toggle" id="theme-toggle" aria-label="Alternar tema"></div>
                 <div class="lang-switcher">
                     <button id="lang-pt" class="lang-switcher__btn active">PT</button>
                     <span>/</span>
@@ -44,47 +42,51 @@
     </header>
 
     <main class="product-page">
-
         <section class="product-header">
             <div class="container">
-                <a href="produtos.html" class="breadcrumb" data-key="productBreadcrumb">&larr; Voltar para todos os produtos</a>
+                <a href="produtos.html" class="breadcrumb">← Voltar para todos os produtos</a>
                 <h1 class="product-header__title">DentComm <span class="highlight">Core360</span></h1>
-                <p class="product-header__objective" data-key="core360Objective">Integrar marketing, atendimento, vendas e gestão em um ecossistema digital completo para previsibilidade de agenda e crescimento sustentável.</p>
+                <p class="product-header__objective">Integrar marketing, atendimento, vendas e gestão em um ecossistema digital completo para previsibilidade de agenda e crescimento sustentável.</p>
             </div>
         </section>
 
         <section class="product-details">
             <div class="container product-details__container">
-                <div class="product-details__info scroll-reveal">
-                    <div class="info-block">
-                        <h3 data-key="core360TargetTitle">Para quem é o plano Core360?</h3>
-                        <ul class="icon-list">
-                            <li data-key="core360Target1">Clínicas que possuem pelo menos duas especialidades ativas.</li>
-                            <li data-key="core360Target2">Quem já validou a presença digital e deseja escalar com controle.</li>
-                            <li data-key="core360Target3">Estruturas com equipe interna ou atendimento terceirizado estruturado.</li>
-                            <li data-key="core360Target4">Quem precisa de um sistema previsível para gestão comercial e marketing.</li>
+                <div class="product-details__content">
+                    <div class="product-details__visual scroll-reveal">
+                        <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1974&auto=format&fit=crop" alt="Dashboard de BI e Analytics do plano Core360">
+                    </div>
+
+                    <div class="info-block scroll-reveal">
+                        <h3>Para quem é o plano Core360?</h3>
+                        <ul class="check-list">
+                            <li>Clínicas que possuem pelo menos duas especialidades ativas.</li>
+                            <li>Quem já validou a presença digital e deseja escalar com controle.</li>
+                            <li>Estruturas com equipe interna ou atendimento terceirizado estruturado.</li>
+                            <li>Quem precisa de um sistema previsível para gestão comercial e marketing.</li>
                         </ul>
                     </div>
-                    <div class="info-block">
-                        <h3 data-key="core360PainsTitle">Principais Dores que Resolvemos</h3>
-                        <ul class="icon-list">
-                            <li data-key="core360Pain1">Crescimento desorganizado e que se tornou difícil de escalar.</li>
-                            <li data-key="core360Pain2">Equipe sem um padrão claro de atendimento e conversão.</li>
-                            <li data-key="core360Pain3">Falta de rastreamento do retorno por campanha e por canal.</li>
-                            <li data-key="core360Pain4">ROI baixo por ausência de uma visão integrada das ações de marketing.</li>
-                            <li data-key="core360Pain5">Perda de pacientes por falhas na jornada de nutrição e agendamento.</li>
+                    <div class="info-block scroll-reveal">
+                        <h3>Principais Dores que Resolvemos</h3>
+                        <ul class="check-list">
+                            <li>Crescimento desorganizado e que se tornou difícil de escalar.</li>
+                            <li>Equipe sem um padrão claro de atendimento e conversão.</li>
+                            <li>Falta de rastreamento do retorno por campanha e por canal.</li>
+                            <li>ROI baixo por ausência de uma visão integrada das ações de marketing.</li>
+                            <li>Perda de pacientes por falhas na jornada de nutrição e agendamento.</li>
                         </ul>
                     </div>
                 </div>
-                <div class="product-details__investment scroll-reveal">
-                    <div class="investment-card">
-                        <h3 data-key="investmentTitle">Investimento</h3>
-                        <div class="investment-card__price" data-key="core360Price">A partir de <strong>$1550</strong> /mês</div>
+
+                <div class="product-details__investment">
+                    <div class="investment-card scroll-reveal">
+                        <h3>Investimento</h3>
+                        <div class="investment-card__price">A partir de <strong>$1550</strong> /mês</div>
                         <div class="investment-card__details">
-                            <p><strong data-key="adsBudgetTitle">Verba de anúncios:</strong> <span data-key="core360Ads">USD 1000 (sugerido)</span></p>
-                            <p><strong data-key="contractTitle">Contrato mínimo:</strong> <span data-key="core360Contract">6 meses</span></p>
+                            <p><strong>Verba de anúncios:</strong> USD 1000 (sugerido)</p>
+                            <p><strong>Contrato mínimo:</strong> 6 meses</p>
                         </div>
-                        <a href="https://wa.me/5511999998888?text=Ol%C3%A1%21+Tenho+interesse+no+plano+DentComm+Core360." target="_blank" class="btn btn--primary" data-key="core360Btn">Quero contratar o plano Core360</a>
+                        <a href="contato.html" class="btn btn--primary btn--large">Falar com um Consultor</a>
                     </div>
                 </div>
             </div>
@@ -92,54 +94,81 @@
 
         <section class="product-deliverables">
             <div class="container">
-                <h2 class="section-title" data-key="deliverablesTitleCore360">O que você <span class="highlight">recebe</span> no plano Core360</h2>
+                <h2 class="section-title">O que você <span class="highlight">recebe</span></h2>
                 <div class="deliverables-grid">
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="core360Deliv1Title">Integração Total do Ecossistema</h4><ul class="check-list"><li data-key="core360Deliv1Item1">Site institucional + páginas específicas por especialidade.</li><li data-key="core360Deliv1Item2">Central de agendamento conectada ao CRM e Google Agenda.</li><li data-key="core360Deliv1Item3">Chatbots com fluxo customizado por especialidade.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="core360Deliv2Title">Conteúdo Operacional</h4><ul class="check-list"><li data-key="core360Deliv2Item1">6 artes por semana, com variação por canal e público.</li><li data-key="core360Deliv2Item2">Kit complementar de stories, vídeos curtos e formatos interativos.</li><li data-key="core360Deliv2Item3">Planejamento editorial tático vinculado às campanhas.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="core360Deliv3Title">Tráfego Multicanal Flexível</h4><ul class="check-list"><li data-key="core360Deliv3Item1">Criação de campanhas ilimitadas no Meta Ads e Google Ads.</li><li data-key="core360Deliv3Item2">Campanhas distribuídas por objetivo (captação, posicionamento, etc.).</li><li data-key="core360Deliv3Item3">Segmentações profundas por especialidade e comportamento.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="core360Deliv4Title">Landing Pages Personalizadas</h4><ul class="check-list"><li data-key="core360Deliv4Item1">Criação ilimitada de landing pages por campanha ou ação.</li><li data-key="core360Deliv4Item2">Layouts otimizados para conversão com call tracking.</li><li data-key="core360Deliv4Item3">Otimizações contínuas com base em dados de desempenho.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="core360Deliv5Title">CRM Avançado e Automação</h4><ul class="check-list"><li data-key="core360Deliv5Item1">Funis por canal, tipo de paciente, especialidade e origem.</li><li data-key="core360Deliv5Item2">Automação por comportamento (clicou, agendou, ignorou).</li><li data-key="core360Deliv5Item3">Histórico completo de cada lead visível no dashboard.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="core360Deliv6Title">Nutrição e Relacionamento 360°</h4><ul class="check-list"><li data-key="core360Deliv6Item1">Campanhas ilimitadas de e-mail marketing com IA.</li><li data-key="core360Deliv6Item2">Sequência de WhatsApp com até 6 interações automatizadas.</li><li data-key="core360Deliv6Item3">Recuperação de leads inativos com mais de 90 dias.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="core360Deliv7Title">Inteligência Artificial Aplicada</h4><ul class="check-list"><li data-key="core360Deliv7Item1">Pontuação automática de leads com base em comportamento.</li><li data-key="core360Deliv7Item2">Sugestão de conteúdos e campanhas com base em dados.</li><li data-key="core360Deliv7Item3">Otimização de horário de envio de campanhas por IA.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="core360Deliv8Title">Suporte à Equipe e Treinamento</h4><ul class="check-list"><li data-key="core360Deliv8Item1">Treinamento comercial para equipe interna (atendimento + conversão).</li><li data-key="core360Deliv8Item2">Scripts prontos e vídeos de apoio.</li><li data-key="core360Deliv8Item3">Consultoria ativa para adaptação da operação interna.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="core360Deliv9Title">Reuniões e Alinhamento Comercial</h4><ul class="check-list"><li data-key="core360Deliv9Item1">4 reuniões mensais (3 operacionais + 1 estratégica).</li><li data-key="core360Deliv9Item2">Planejamento tático das campanhas e análise de performance.</li><li data-key="core360Deliv9Item3">Apoio para gestão interna com relatórios executivos.</li></ul></div>
-                    <div class="deliverable-card scroll-reveal"><h4 data-key="core360Deliv10Title">Relatórios e Dashboard Executivo</h4><ul class="check-list"><li data-key="core360Deliv10Item1">Relatórios semanais (leads por canal, CPL, taxa de agendamento).</li><li data-key="core360Deliv10Item2">ROI por especialidade e por campanha.</li><li data-key="core360Deliv10Item3">Dashboard exclusivo com dados em tempo real.</li></ul></div>
+                    <div class="deliverable-card scroll-reveal">
+                        <h4>Integração Total do Ecossistema</h4>
+                        <ul class="check-list">
+                            <li>Site institucional + páginas específicas por especialidade.</li>
+                            <li>Central de agendamento conectada ao CRM e Google Agenda.</li>
+                            <li>Chatbots com fluxo customizado por especialidade.</li>
+                        </ul>
+                    </div>
+                    <div class="deliverable-card scroll-reveal">
+                        <h4>Conteúdo Operacional</h4>
+                        <ul class="check-list">
+                            <li>6 artes por semana, com variação por canal e público.</li>
+                            <li>Kit complementar de stories, vídeos curtos e formatos interativos.</li>
+                            <li>Planejamento editorial tático vinculado às campanhas.</li>
+                        </ul>
+                    </div>
+                    <div class="deliverable-card scroll-reveal">
+                        <h4>CRM Avançado e Automação</h4>
+                        <ul class="check-list">
+                            <li>Funis por canal, tipo de paciente, especialidade e origem.</li>
+                            <li>Automação por comportamento (clicou, agendou, ignorou).</li>
+                            <li>Histórico completo de cada lead visível no dashboard.</li>
+                        </ul>
+                    </div>
+                    <div class="deliverable-card scroll-reveal">
+                        <h4>Inteligência Artificial Aplicada</h4>
+                        <ul class="check-list">
+                            <li>Pontuação automática de leads com base em comportamento.</li>
+                            <li>Sugestão de conteúdos e campanhas com base em dados.</li>
+                            <li>Otimização de horário de envio de campanhas por IA.</li>
+                        </ul>
+                    </div>
+                    <div class="deliverable-card scroll-reveal">
+                        <h4>Relatórios e Dashboard Executivo</h4>
+                        <ul class="check-list">
+                            <li>Relatórios semanais (leads por canal, CPL, taxa de agendamento).</li>
+                            <li>ROI por especialidade e por campanha.</li>
+                            <li>Dashboard exclusivo com dados em tempo real.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
-
     </main>
     
     <footer class="footer">
         <div class="container footer__container">
             <div class="footer__brand">
-                <a href="index.html">
-                    <img src="https://svgshare.com/i/18An.svg" alt="Logo DentComm" class="footer__logo">
-                </a>
-                <p class="footer__tagline" data-key="footerTagline">Marketing com propósito. Crescimento com consciência.</p>
+                <a href="index.html"><img src="https://svgshare.com/i/18An.svg" alt="Logo DentComm" class="footer__logo"></a>
+                <p class="footer__tagline">Marketing com propósito. Crescimento com consciência.</p>
             </div>
             <div class="footer__links">
-                <h4 data-key="footerNav">Navegação</h4>
+                <h4>Navegação</h4>
                 <ul>
-                    <li><a href="index.html" data-key="navHome">Início</a></li>
-                    <li><a href="quem-somos.html" data-key="navAbout">Quem Somos</a></li>
-                    <li><a href="produtos.html" data-key="navProducts">Produtos</a></li>
-                    <li><a href="contato.html" data-key="navContact">Contato</a></li>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
                 </ul>
             </div>
             <div class="footer__contact">
-                <h4 data-key="footerContact">Contato</h4>
+                <h4>Contato</h4>
                 <p>contato@dentcomm.com</p>
                 <p>+55 (11) 99999-8888</p>
             </div>
         </div>
         <div class="footer__bottom">
-            <p>&copy; 2024 DentComm. <span data-key="footerRights">Todos os direitos reservados.</span></p>
+            <p>&copy; 2024 DentComm. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <a href="https://wa.me/5511999998888" class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 .5c58.4 0 112.2 22.8 152.6 63.1l-2.1 1.9c-1.6 1.4-3.2 2.8-4.9 4.1-18.1 13.9-33.1 31.2-44.2 50.9-12.8 22.8-19.1 48.4-19.1 74.3 0 5.2-.2 10.5-.5 15.6-3.3 54-28.7 100.2-69.5 133.2-4.2 3.4-8.5 6.6-13.1 9.5-2.9 1.9-5.8 3.7-8.8 5.3-33.1 18.9-70.5 28.7-109.1 28.7-35.8 0-70.3-8.9-99.5-25.6l-2.9-1.7-107.5 28.1 28.8-104.9-1.9-3.1C55.2 355 34.4 309.8 34.4 256c0-105.7 85.7-191.5 191.5-191.5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/></svg>
     </a>
 
 </body>

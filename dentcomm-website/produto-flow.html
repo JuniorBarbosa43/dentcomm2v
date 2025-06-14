@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DentComm Flow - Nossas Soluções</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -22,13 +19,14 @@
             </a>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li><a href="index.html" class="nav__link" data-key="navHome">Início</a></li>
-                    <li><a href="quem-somos.html" class="nav__link" data-key="navAbout">Quem Somos</a></li>
-                    <li><a href="produtos.html" class="nav__link active" data-key="navProducts">Produtos</a></li>
-                    <li><a href="contato.html" class="nav__link" data-key="navContact">Contato</a></li>
+                    <li><a href="index.html" class="nav__link">Início</a></li>
+                    <li><a href="quem-somos.html" class="nav__link">Quem Somos</a></li>
+                    <li><a href="produtos.html" class="nav__link active">Produtos</a></li>
+                    <li><a href="contato.html" class="nav__link">Contato</a></li>
                 </ul>
             </nav>
             <div class="header__actions">
+                <div class="theme-toggle" id="theme-toggle" aria-label="Alternar tema"></div>
                 <div class="lang-switcher">
                     <button id="lang-pt" class="lang-switcher__btn active">PT</button>
                     <span>/</span>
@@ -44,47 +42,51 @@
     </header>
 
     <main class="product-page">
-
         <section class="product-header">
             <div class="container">
-                <a href="produtos.html" class="breadcrumb" data-key="productBreadcrumb">&larr; Voltar para todos os produtos</a>
+                <a href="produtos.html" class="breadcrumb">← Voltar para todos os produtos</a>
                 <h1 class="product-header__title">DentComm <span class="highlight">Flow</span></h1>
-                <p class="product-header__objective" data-key="flowObjective">Elevar o nível de captação, conversão e gestão da jornada do paciente. O Flow entrega estrutura, automação e escala para crescer com controle e inteligência.</p>
+                <p class="product-header__objective">Eleve o nível de captação, conversão e gestão da jornada do paciente. O Flow entrega estrutura, automação e escala para crescer com controle e inteligência.</p>
             </div>
         </section>
 
         <section class="product-details">
             <div class="container product-details__container">
-                <div class="product-details__info scroll-reveal">
-                    <div class="info-block">
-                        <h3 data-key="flowTargetTitle">Para quem é o plano Flow?</h3>
-                        <ul class="icon-list">
-                            <li data-key="flowTarget1">Dentistas e clínicas que já têm uma presença digital básica estruturada.</li>
-                            <li data-key="flowTarget2">Quem deseja aumentar o volume de pacientes com previsibilidade.</li>
-                            <li data-key="flowTarget3">Profissionais que sentem estar perdendo oportunidades por falta de tempo ou automação.</li>
-                            <li data-key="flowTarget4">Quem precisa organizar o atendimento e mensurar o retorno real com clareza.</li>
+                <div class="product-details__content">
+                    <div class="product-details__visual scroll-reveal">
+                        <img src="https://images.unsplash.com/photo-1580231969038-a24b21a32595?q=80&w=1974&auto=format&fit=crop" alt="Fluxo de automação do plano Flow">
+                    </div>
+
+                    <div class="info-block scroll-reveal">
+                        <h3>Para quem é o plano Flow?</h3>
+                        <ul class="check-list">
+                            <li>Dentistas e clínicas que já têm uma presença digital básica estruturada.</li>
+                            <li>Quem deseja aumentar o volume de pacientes com previsibilidade.</li>
+                            <li>Profissionais que sentem estar perdendo oportunidades por falta de tempo ou automação.</li>
+                            <li>Quem precisa organizar o atendimento e mensurar o retorno real com clareza.</li>
                         </ul>
                     </div>
-                    <div class="info-block">
-                        <h3 data-key="flowPainsTitle">Principais Dores que Resolvemos</h3>
-                        <ul class="icon-list">
-                            <li data-key="flowPain1">Captação inconsistente: um mês a agenda está cheia, no outro, vazia.</li>
-                            <li data-key="flowPain2">Baixa conversão: os pacientes chegam pelo marketing, mas não agendam.</li>
-                            <li data-key="flowPain3">Atendimento confuso, repetitivo e sem padronização.</li>
-                            <li data-key="flowPain4">Falta de nutrição para leads que não fecham na primeira conversa.</li>
-                            <li data-key="flowPain5">Produção de conteúdo é uma obrigação cansativa e pouco eficaz.</li>
+                    <div class="info-block scroll-reveal">
+                        <h3>Principais Dores que Resolvemos</h3>
+                        <ul class="check-list">
+                            <li>Captação inconsistente: um mês a agenda está cheia, no outro, vazia.</li>
+                            <li>Baixa conversão: os pacientes chegam pelo marketing, mas não agendam.</li>
+                            <li>Atendimento confuso, repetitivo e sem padronização.</li>
+                            <li>Falta de nutrição para leads que não fecham na primeira conversa.</li>
+                            <li>Produção de conteúdo é uma obrigação cansativa e pouco eficaz.</li>
                         </ul>
                     </div>
                 </div>
-                <div class="product-details__investment scroll-reveal">
-                    <div class="investment-card">
-                        <h3 data-key="investmentTitle">Investimento</h3>
-                        <div class="investment-card__price" data-key="flowPrice">A partir de <strong>$650</strong> /mês</div>
+
+                <div class="product-details__investment">
+                    <div class="investment-card scroll-reveal">
+                        <h3>Investimento</h3>
+                        <div class="investment-card__price">A partir de <strong>$650</strong> /mês</div>
                         <div class="investment-card__details">
-                            <p><strong data-key="adsBudgetTitle">Verba de anúncios:</strong> <span data-key="flowAds">USD 450 (sugerido)</span></p>
-                            <p><strong data-key="contractTitle">Contrato mínimo:</strong> <span data-key="flowContract">4 meses</span></p>
+                            <p><strong>Verba de anúncios:</strong> USD 450 (sugerido)</p>
+                            <p><strong>Contrato mínimo:</strong> 4 meses</p>
                         </div>
-                        <a href="https://wa.me/5511999998888?text=Ol%C3%A1%21+Tenho+interesse+no+plano+DentComm+Flow." target="_blank" class="btn btn--primary" data-key="flowBtn">Quero contratar o plano Flow</a>
+                        <a href="contato.html" class="btn btn--primary btn--large">Falar com um Consultor</a>
                     </div>
                 </div>
             </div>
@@ -92,115 +94,89 @@
 
         <section class="product-deliverables">
             <div class="container">
-                <h2 class="section-title" data-key="deliverablesTitleFlow">O que você <span class="highlight">recebe</span> no plano Flow</h2>
+                <h2 class="section-title">O que você <span class="highlight">recebe</span></h2>
                 <div class="deliverables-grid">
                     <div class="deliverable-card scroll-reveal">
-                        <h4 data-key="flowDeliv1Title">Rebranding Completo</h4>
+                        <h4>Rebranding Completo</h4>
                         <ul class="check-list">
-                            <li data-key="flowDeliv1Item1">Redesenho total da identidade visual do consultório.</li>
-                            <li data-key="flowDeliv1Item2">Criação de nova logo, paleta de cores e tipografia.</li>
-                            <li data-key="flowDeliv1Item3">Manual de identidade visual profissional (PDF).</li>
+                            <li>Redesenho total da identidade visual do consultório.</li>
+                            <li>Criação de nova logo, paleta de cores e tipografia.</li>
+                            <li>Manual de identidade visual profissional (PDF).</li>
                         </ul>
                     </div>
                     <div class="deliverable-card scroll-reveal">
-                        <h4 data-key="flowDeliv2Title">Conteúdo e Posicionamento</h4>
+                        <h4>Conteúdo e Posicionamento</h4>
                         <ul class="check-list">
-                            <li data-key="flowDeliv2Item1">5 artes por semana produzidas pela DentComm.</li>
-                            <li data-key="flowDeliv2Item2">Reavaliação estratégica da identidade visual.</li>
-                            <li data-key="flowDeliv2Item3">Textos otimizados para bio, WhatsApp e campanhas.</li>
+                            <li>5 artes por semana produzidas pela DentComm.</li>
+                            <li>Reavaliação estratégica da identidade visual.</li>
+                            <li>Textos otimizados para bio, WhatsApp e campanhas.</li>
                         </ul>
                     </div>
                     <div class="deliverable-card scroll-reveal">
-                        <h4 data-key="flowDeliv3Title">Campanhas de Tráfego</h4>
+                        <h4>Campanhas de Tráfego</h4>
                         <ul class="check-list">
-                            <li data-key="flowDeliv3Item1">5 campanhas simultâneas no Meta Ads.</li>
-                            <li data-key="flowDeliv3Item2">2 campanhas no Google Ads (Pesquisa e YouTube).</li>
-                            <li data-key="flowDeliv3Item3">Segmentações otimizadas por comportamento.</li>
+                            <li>5 campanhas simultâneas no Meta Ads.</li>
+                            <li>2 campanhas no Google Ads (Pesquisa e YouTube).</li>
+                            <li>Segmentações otimizadas por comportamento.</li>
                         </ul>
                     </div>
                     <div class="deliverable-card scroll-reveal">
-                        <h4 data-key="flowDeliv4Title">CRM e Atendimento Automatizado</h4>
+                        <h4>CRM e Atendimento Automatizado</h4>
                         <ul class="check-list">
-                            <li data-key="flowDeliv4Item1">CRM com segmentação por especialidade e origem.</li>
-                            <li data-key="flowDeliv4Item2">Automação de WhatsApp (entrada, pré-triagem, lembrete).</li>
-                            <li data-key="flowDeliv4Item3">Funil de conversão ajustado por canal.</li>
+                            <li>CRM com segmentação por especialidade e origem.</li>
+                            <li>Automação de WhatsApp (entrada, pré-triagem, lembrete).</li>
+                            <li>Funil de conversão ajustado por canal.</li>
                         </ul>
                     </div>
                     <div class="deliverable-card scroll-reveal">
-                        <h4 data-key="flowDeliv5Title">Nutrição e Reativação</h4>
+                        <h4>Nutrição e Reativação</h4>
                         <ul class="check-list">
-                            <li data-key="flowDeliv5Item1">3 campanhas de email marketing mensais.</li>
-                            <li data-key="flowDeliv5Item2">Reengajamento de até 1.000 leads da base anterior.</li>
-                            <li data-key="flowDeliv5Item3">Disparos segmentados com rastreio.</li>
+                            <li>3 campanhas de email marketing mensais.</li>
+                            <li>Reengajamento de até 1.000 leads da base anterior.</li>
+                            <li>Disparos segmentados com rastreio.</li>
                         </ul>
                     </div>
                     <div class="deliverable-card scroll-reveal">
-                        <h4 data-key="flowDeliv6Title">Inteligência Artificial Ativada</h4>
+                        <h4>Inteligência Artificial Ativada</h4>
                         <ul class="check-list">
-                            <li data-key="flowDeliv6Item1">Implantação de IA do RD Station Marketing.</li>
-                            <li data-key="flowDeliv6Item2">Sugestão de títulos de e-mails e segmentação por IA.</li>
-                            <li data-key="flowDeliv6Item3">Treinamento para uso da IA nos fluxos de automação.</li>
-                        </ul>
-                    </div>
-                     <div class="deliverable-card scroll-reveal">
-                        <h4 data-key="flowDeliv7Title">Estratégia Comercial e Suporte</h4>
-                        <ul class="check-list">
-                            <li data-key="flowDeliv7Item1">Scripts personalizados por canal e especialidade.</li>
-                            <li data-key="flowDeliv7Item2">Treinamento da equipe interna para conversão.</li>
-                            <li data-key="flowDeliv7Item3">Suporte técnico para ajustes operacionais.</li>
-                        </ul>
-                    </div>
-                     <div class="deliverable-card scroll-reveal">
-                        <h4 data-key="flowDeliv8Title">Reuniões Estratégicas</h4>
-                        <ul class="check-list">
-                           <li data-key="flowDeliv8Item1">3 reuniões mensais com especialista da DentComm.</li>
-                           <li data-key="flowDeliv8Item2">Alinhamento de campanha, dados e tomada de decisão.</li>
-                        </ul>
-                    </div>
-                     <div class="deliverable-card scroll-reveal">
-                        <h4 data-key="flowDeliv9Title">Relatórios e ROI</h4>
-                        <ul class="check-list">
-                           <li data-key="flowDeliv9Item1">Relatórios semanais com leads, CPL e CPCv.</li>
-                           <li data-key="flowDeliv9Item2">Estimativa de agendamentos e faturamento.</li>
-                           <li data-key="flowDeliv9Item3">ROI explicado: investimento x pacientes x retorno.</li>
+                            <li>Implantação de IA do RD Station Marketing.</li>
+                            <li>Sugestão de títulos de e-mails e segmentação por IA.</li>
+                            <li>Treinamento para uso da IA nos fluxos de automação.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
     
     <footer class="footer">
         <div class="container footer__container">
             <div class="footer__brand">
-                <a href="index.html">
-                    <img src="https://svgshare.com/i/18An.svg" alt="Logo DentComm" class="footer__logo">
-                </a>
-                <p class="footer__tagline" data-key="footerTagline">Marketing com propósito. Crescimento com consciência.</p>
+                <a href="index.html"><img src="https://svgshare.com/i/18An.svg" alt="Logo DentComm" class="footer__logo"></a>
+                <p class="footer__tagline">Marketing com propósito. Crescimento com consciência.</p>
             </div>
             <div class="footer__links">
-                <h4 data-key="footerNav">Navegação</h4>
+                <h4>Navegação</h4>
                 <ul>
-                    <li><a href="index.html" data-key="navHome">Início</a></li>
-                    <li><a href="quem-somos.html" data-key="navAbout">Quem Somos</a></li>
-                    <li><a href="produtos.html" data-key="navProducts">Produtos</a></li>
-                    <li><a href="contato.html" data-key="navContact">Contato</a></li>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
                 </ul>
             </div>
             <div class="footer__contact">
-                <h4 data-key="footerContact">Contato</h4>
+                <h4>Contato</h4>
                 <p>contato@dentcomm.com</p>
                 <p>+55 (11) 99999-8888</p>
             </div>
         </div>
         <div class="footer__bottom">
-            <p>&copy; 2024 DentComm. <span data-key="footerRights">Todos os direitos reservados.</span></p>
+            <p>&copy; 2024 DentComm. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <a href="https://wa.me/5511999998888" class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 .5c58.4 0 112.2 22.8 152.6 63.1l-2.1 1.9c-1.6 1.4-3.2 2.8-4.9 4.1-18.1 13.9-33.1 31.2-44.2 50.9-12.8 22.8-19.1 48.4-19.1 74.3 0 5.2-.2 10.5-.5 15.6-3.3 54-28.7 100.2-69.5 133.2-4.2 3.4-8.5 6.6-13.1 9.5-2.9 1.9-5.8 3.7-8.8 5.3-33.1 18.9-70.5 28.7-109.1 28.7-35.8 0-70.3-8.9-99.5-25.6l-2.9-1.7-107.5 28.1 28.8-104.9-1.9-3.1C55.2 355 34.4 309.8 34.4 256c0-105.7 85.7-191.5 191.5-191.5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/></svg>
     </a>
 
 </body>
