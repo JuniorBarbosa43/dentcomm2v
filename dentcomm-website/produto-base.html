@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -29,6 +29,7 @@
                 </ul>
             </nav>
             <div class="header__actions">
+                <div class="theme-toggle" id="theme-toggle" aria-label="Alternar tema"></div>
                 <div class="lang-switcher">
                     <button id="lang-pt" class="lang-switcher__btn active">PT</button>
                     <span>/</span>
@@ -47,17 +48,22 @@
 
         <section class="product-header">
             <div class="container">
-                <a href="produtos.html" class="breadcrumb" data-key="productBreadcrumb">&larr; Voltar para todos os produtos</a>
+                <a href="produtos.html" class="breadcrumb" data-key="productBreadcrumb">← Voltar para todos os produtos</a>
                 <h1 class="product-header__title">DentComm <span class="highlight">Base</span></h1>
-                <p class="product-header__objective" data-key="baseObjective">Entregar a estrutura mínima para qualquer dentista atrair pacientes particulares, construir autoridade digital e entender, na prática, o retorno de suas ações.</p>
+                <p class="product-header__objective" data-key="baseObjective">A estrutura essencial para qualquer dentista atrair pacientes, construir autoridade e entender o retorno de suas ações de forma prática.</p>
             </div>
         </section>
 
         <section class="product-details">
             <div class="container product-details__container">
-                <div class="product-details__info scroll-reveal">
-                    <div class="info-block">
+                <div class="product-details__content">
+                    <div class="product-details__visual scroll-reveal">
+                        <img src="https://images.unsplash.com/photo-1579684385127-6ab18a5d7814?q=80&w=1974&auto=format&fit=crop" alt="Visual do Plano Base da DentComm">
+                    </div>
+
+                    <div class="info-block scroll-reveal">
                         <h3 data-key="baseTargetTitle">Para quem é o plano Base?</h3>
+                        <p>Ideal para dentistas e clínicas que buscam uma entrada sólida e profissional no mundo digital. Se você precisa de uma presença online que gere confiança e atraia os primeiros pacientes qualificados, este plano é o ponto de partida perfeito.</p>
                         <ul class="icon-list">
                             <li data-key="baseTarget1">Dentistas que estão começando ou reestruturando sua presença digital.</li>
                             <li data-key="baseTarget2">Profissionais que desejam captar pacientes ativamente pelo WhatsApp.</li>
@@ -65,16 +71,17 @@
                             <li data-key="baseTarget4">Quem precisa de resultados, mas com baixo risco e complexidade.</li>
                         </ul>
                     </div>
-                    <div class="info-block">
+                    <div class="info-block scroll-reveal">
                         <h3 data-key="basePainsTitle">Principais Dores que Resolvemos</h3>
-                        <ul class="icon-list">
-                            <li data-key="basePain1">Publica conteúdo, mas não vê retorno em pacientes.</li>
-                            <li data-key="basePain2">Sente que perde pacientes por desorganização no atendimento.</li>
-                            <li data-key="basePain3">Faz "marketing", mas não sabe se realmente dá resultado financeiro.</li>
-                            <li data-key="basePain4">Não tem clareza de como transformar seguidores em agenda cheia.</li>
+                         <ul class="icon-list">
+                            <li data-key="basePain1">"Publico conteúdo, mas não vejo retorno em pacientes."</li>
+                            <li data-key="basePain2">"Sinto que perco pacientes por desorganização no atendimento."</li>
+                            <li data-key="basePain3">"Faço marketing, mas não sei se realmente dá resultado financeiro."</li>
+                            <li data-key="basePain4">"Não tenho clareza de como transformar seguidores em uma agenda cheia."</li>
                         </ul>
                     </div>
                 </div>
+
                 <div class="product-details__investment scroll-reveal">
                     <div class="investment-card">
                         <h3 data-key="investmentTitle">Investimento</h3>
@@ -83,7 +90,7 @@
                             <p><strong data-key="adsBudgetTitle">Verba de anúncios:</strong> <span data-key="baseAds">USD 200 (sugerido)</span></p>
                             <p><strong data-key="contractTitle">Contrato mínimo:</strong> <span data-key="baseContract">3 meses</span></p>
                         </div>
-                        <a href="https://wa.me/5511999998888?text=Ol%C3%A1%21+Tenho+interesse+no+plano+DentComm+Base." target="_blank" class="btn btn--primary" data-key="baseBtn">Quero contratar o plano Base</a>
+                        <a href="contato.html" class="btn btn--primary btn--large">Falar com um Consultor</a>
                     </div>
                 </div>
             </div>
@@ -94,45 +101,43 @@
                 <h2 class="section-title" data-key="deliverablesTitle">O que você <span class="highlight">recebe</span> no plano Base</h2>
                 <div class="deliverables-grid">
                     <div class="deliverable-card scroll-reveal">
-                        <h4 data-key="baseDeliv1Title">Estrutura de Captação e Atendimento</h4>
+                        <h4 data-key="baseDeliv1Title">Estrutura de Captação</h4>
                         <ul class="check-list">
-                            <li data-key="baseDeliv1Item1">Landing page por especialidade com prova social e botão de WhatsApp.</li>
-                            <li data-key="baseDeliv1Item2">Formulário de qualificação integrado ao CRM.</li>
-                            <li data-key="baseDeliv1Item3">Implantação de funil de vendas com etapas odontológicas personalizadas.</li>
+                            <li data-key="baseDeliv1Item1">Landing page focada em conversão.</li>
+                            <li data-key="baseDeliv1Item2">Formulário integrado ao CRM.</li>
+                            <li data-key="baseDeliv1Item3">Funil de vendas inicial personalizado.</li>
                         </ul>
                     </div>
                     <div class="deliverable-card scroll-reveal">
-                        <h4 data-key="baseDeliv2Title">Identidade Digital e Presença Online</h4>
+                        <h4 data-key="baseDeliv2Title">Identidade Digital</h4>
                         <ul class="check-list">
-                            <li data-key="baseDeliv2Item1">Criação de logotipo e paleta visual profissional.</li>
-                            <li data-key="baseDeliv2Item2">Textos prontos para bio do Instagram e apresentação no WhatsApp.</li>
-                            <li data-key="baseDeliv2Item3">Kit semanal com 4 artes produzidas pela DentComm.</li>
-                            <li data-key="baseDeliv2Item4">Organização visual inicial do feed e destaques.</li>
+                            <li data-key="baseDeliv2Item1">Criação de logotipo e paleta visual.</li>
+                            <li data-key="baseDeliv2Item2">Textos otimizados para redes sociais.</li>
+                            <li data-key="baseDeliv2Item3">Kit semanal com 4 artes.</li>
                         </ul>
                     </div>
                     <div class="deliverable-card scroll-reveal">
-                        <h4 data-key="baseDeliv3Title">Tráfego e Captação de Pacientes</h4>
+                        <h4 data-key="baseDeliv3Title">Tráfego Pago</h4>
                         <ul class="check-list">
-                            <li data-key="baseDeliv3Item1">2 campanhas ativas por mês no Meta Ads.</li>
-                            <li data-key="baseDeliv3Item2">Captação local direcionada para o WhatsApp.</li>
-                            <li data-key="baseDeliv3Item3">Posicionamento de autoridade por especialidade.</li>
-                            <li data-key="baseDeliv3Item4">Segmentação inteligente por cidade, faixa etária e interesse.</li>
+                            <li data-key="baseDeliv3Item1">2 campanhas ativas no Meta Ads (Instagram/Facebook).</li>
+                            <li data-key="baseDeliv3Item2">Captação local direcionada para WhatsApp.</li>
+                            <li data-key="baseDeliv3Item3">Segmentação inteligente de público.</li>
                         </ul>
                     </div>
                     <div class="deliverable-card scroll-reveal">
                         <h4 data-key="baseDeliv4Title">Suporte e Estratégia</h4>
                         <ul class="check-list">
-                            <li data-key="baseDeliv4Item1">Treinamento gravado: como atender no WhatsApp e converter.</li>
-                            <li data-key="baseDeliv4Item2">Templates de mensagens para acelerar o atendimento.</li>
-                            <li data-key="baseDeliv4Item3">1 reunião quinzenal de estratégia com especialista.</li>
+                            <li data-key="baseDeliv4Item1">Treinamento de atendimento via WhatsApp.</li>
+                            <li data-key="baseDeliv4Item2">Templates de mensagens para conversão.</li>
+                            <li data-key="baseDeliv4Item3">1 reunião quinzenal de alinhamento.</li>
                         </ul>
                     </div>
                     <div class="deliverable-card scroll-reveal">
-                        <h4 data-key="baseDeliv5Title">Análise de Resultados e ROI</h4>
+                        <h4 data-key="baseDeliv5Title">Análise de Resultados</h4>
                         <ul class="check-list">
-                            <li data-key="baseDeliv5Item1">Relatório de leads, custo por lead e performance.</li>
-                            <li data-key="baseDeliv5Item2">Cálculo de ROI realista (investimento vs faturamento).</li>
-                            <li data-key="baseDeliv5Item3">Orientação para tomada de decisão sobre campanhas.</li>
+                            <li data-key="baseDeliv5Item1">Relatório de performance de campanhas.</li>
+                            <li data-key="baseDeliv5Item2">Cálculo de Custo por Lead (CPL).</li>
+                            <li data-key="baseDeliv5Item3">Análise de ROI (Retorno sobre Investimento).</li>
                         </ul>
                     </div>
                 </div>
@@ -142,35 +147,10 @@
     </main>
     
     <footer class="footer">
-        <div class="container footer__container">
-            <div class="footer__brand">
-                <a href="index.html">
-                    <img src="https://svgshare.com/i/18An.svg" alt="Logo DentComm" class="footer__logo">
-                </a>
-                <p class="footer__tagline" data-key="footerTagline">Marketing com propósito. Crescimento com consciência.</p>
-            </div>
-            <div class="footer__links">
-                <h4 data-key="footerNav">Navegação</h4>
-                <ul>
-                    <li><a href="index.html" data-key="navHome">Início</a></li>
-                    <li><a href="quem-somos.html" data-key="navAbout">Quem Somos</a></li>
-                    <li><a href="produtos.html" data-key="navProducts">Produtos</a></li>
-                    <li><a href="contato.html" data-key="navContact">Contato</a></li>
-                </ul>
-            </div>
-            <div class="footer__contact">
-                <h4 data-key="footerContact">Contato</h4>
-                <p>contato@dentcomm.com</p>
-                <p>+55 (11) 99999-8888</p>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <p>&copy; 2024 DentComm. <span data-key="footerRights">Todos os direitos reservados.</span></p>
-        </div>
-    </footer>
+        </footer>
 
     <a href="https://wa.me/5511999998888" class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 .5c58.4 0 112.2 22.8 152.6 63.1l-2.1 1.9c-1.6 1.4-3.2 2.8-4.9 4.1-18.1 13.9-33.1 31.2-44.2 50.9-12.8 22.8-19.1 48.4-19.1 74.3 0 5.2-.2 10.5-.5 15.6-3.3 54-28.7 100.2-69.5 133.2-4.2 3.4-8.5 6.6-13.1 9.5-2.9 1.9-5.8 3.7-8.8 5.3-33.1 18.9-70.5 28.7-109.1 28.7-35.8 0-70.3-8.9-99.5-25.6l-2.9-1.7-107.5 28.1 28.8-104.9-1.9-3.1C55.2 355 34.4 309.8 34.4 256c0-105.7 85.7-191.5 191.5-191.5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/></svg>
     </a>
 
 </body>

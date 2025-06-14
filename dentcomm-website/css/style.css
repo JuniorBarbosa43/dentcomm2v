@@ -2,15 +2,15 @@
  * DENTCOMM - FOLHA DE ESTILO PREMIUM
  * ----------------------------------
  * Design moderno e responsivo para marketing dental
+ * ETAPA 1 (v2): Melhorias aplicadas sobre o código original.
  */
 
 /* 1. IMPORTS E VARIÁVEIS
 ------------------------------------ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 :root {
-    /* Cores principais */
+    /* Cores principais (Identidade Visual Oficial) */
     --primary-cyan: #16FEED;
     --primary-dark: #212121;
     --primary-gray: #676767;
@@ -34,8 +34,8 @@
     --bg-card: #ffffff;
     --bg-overlay: rgba(0, 0, 0, 0.8);
     
-    /* Tipografia */
-    --font-primary: 'Inter', sans-serif;
+    /* Tipografia (Fonte Global Hanken Grotesk) */
+    --font-primary: 'Hanken Grotesk', sans-serif;
     --font-display: 'Playfair Display', serif;
     
     /* Espaçamentos */
@@ -278,7 +278,6 @@ input, textarea, select {
     background: transparent;
     color: var(--primary-dark);
     border-color: var(--primary-dark);
-    backdrop-filter: blur(10px);
 }
 
 .btn--secondary:hover {
@@ -415,16 +414,28 @@ input, textarea, select {
     left: 0;
     right: 0;
     height: var(--header-height);
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(22, 254, 237, 0.1);
     z-index: var(--z-fixed);
-    transition: var(--transition-smooth);
+    transition: background-color var(--transition-smooth), box-shadow var(--transition-smooth);
+    
+    /* Efeito Vidro Fosco */
+    background: rgba(250, 250, 250, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .header.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
+    background: rgba(250, 250, 250, 0.90);
+}
+
+[data-theme="dark"] .header {
+    background: rgba(18, 18, 18, 0.75);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .header.scrolled {
+    background: rgba(18, 18, 18, 0.90);
 }
 
 .header__container {
@@ -542,6 +553,7 @@ input, textarea, select {
     padding: 0.5rem;
     border-radius: var(--radius-sm);
     transition: var(--transition-smooth);
+    z-index: 1001;
 }
 
 .nav-toggle__bar {
@@ -549,10 +561,11 @@ input, textarea, select {
     height: 2px;
     background: var(--primary-dark);
     transition: var(--transition-smooth);
+    transform-origin: center;
 }
 
 .nav-toggle.active .nav-toggle__bar:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
 .nav-toggle.active .nav-toggle__bar:nth-child(2) {
@@ -560,7 +573,7 @@ input, textarea, select {
 }
 
 .nav-toggle.active .nav-toggle__bar:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* 5. PAGE HEADER
@@ -1823,8 +1836,23 @@ input, textarea, select {
     
     .nav__list {
         display: none;
+        flex-direction: column;
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        background: var(--bg-card);
+        padding: 2rem;
+        transform: translateX(100%);
+        transition: transform var(--transition-smooth);
     }
     
+    .nav__list.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
     .nav-toggle {
         display: flex;
     }
@@ -1925,4 +1953,308 @@ input, textarea, select {
         font-size: 2rem;
     }
 }
+/* Adicionado no final do arquivo style.css */
 
+/* ETAPA 2: MELHORIAS EM PRODUTOS E CONVERSÃO */
+
+/* Ajustes na página de vitrine (produtos.html) */
+.products-list__grid {
+    gap: 2.5rem; /* Aumenta o espaçamento entre os cards */
+}
+
+.product-summary-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-summary-card__cta {
+    margin-top: auto; /* Garante que o botão fique alinhado na base do card */
+}
+
+
+/* Novas estilizações para páginas de produto individuais (produto-*.html) */
+.product-page main {
+    padding-top: var(--header-height);
+}
+
+.product-header {
+    text-align: center;
+    padding: 4rem var(--container-padding);
+    background: var(--gradient-hero);
+}
+
+.breadcrumb {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--primary-gray);
+    font-weight: 500;
+}
+.breadcrumb:hover {
+    color: var(--primary-cyan);
+}
+
+.product-header__objective {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 1rem auto 0;
+    color: var(--primary-gray);
+}
+
+.product-details {
+    padding: var(--section-padding);
+}
+
+.product-details__container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+/* Coluna da esquerda com informações e nova imagem */
+.product-details__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.product-details__visual {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.product-details__visual img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: var(--radius-lg);
+}
+
+
+/* Coluna da direita com card de investimento */
+.product-details__investment .investment-card {
+    position: sticky;
+    top: calc(var(--header-height) + 2rem); /* Efeito "flutuante" ao rolar */
+    background: var(--bg-card);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    border: 2px solid var(--primary-cyan);
+}
+
+.investment-card h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.investment-card__price {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.investment-card__details {
+    margin-bottom: 2rem;
+}
+.investment-card__details p {
+    margin-bottom: 0.75rem;
+    color: var(--primary-gray);
+    border-bottom: 1px dashed rgba(0,0,0,0.1);
+    padding-bottom: 0.75rem;
+}
+[data-theme="dark"] .investment-card__details p {
+    border-bottom-color: rgba(255,255,255,0.1);
+}
+
+.investment-card .btn {
+    width: 100%;
+}
+
+
+/* Seção de Entregáveis */
+.product-deliverables {
+    padding: var(--section-padding);
+    background-color: var(--bg-light);
+}
+
+.deliverables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.deliverable-card {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--primary-cyan);
+    transition: var(--transition-smooth);
+}
+.deliverable-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.deliverable-card h4 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.check-list {
+    list-style: none;
+    padding-left: 0;
+}
+.check-list li {
+    margin-bottom: 0.75rem;
+    color: var(--primary-gray);
+    position: relative;
+    padding-left: 1.75rem;
+}
+.check-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--primary-cyan);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Responsividade para a nova estrutura */
+@media (max-width: 992px) {
+    .product-details__container {
+        grid-template-columns: 1fr;
+    }
+    .product-details__investment .investment-card {
+        position: static;
+        width: 100%;
+    }
+}
+
+/* Adicionado/Modificado no final do arquivo style.css */
+
+/* CORREÇÕES VISUAIS - PÁGINA DE PRODUTOS */
+
+/* 1. Tabela de Comparação (Compare nossas soluções) */
+
+.comparison-table-wrapper {
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden; /* Garante que o conteúdo respeite o border-radius */
+}
+
+[data-theme="dark"] .comparison-table-wrapper {
+    border-color: rgba(255,255,255,0.1);
+}
+
+.comparison-table {
+    width: 100%;
+    min-width: 900px; /* Evita que a tabela quebre em telas menores */
+    border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1.25rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(22, 254, 237, 0.1);
+    vertical-align: middle; /* Centraliza verticalmente o conteúdo */
+}
+
+.comparison-table .feature-column {
+    text-align: left !important;
+    font-weight: 600;
+    color: var(--primary-dark);
+    background: var(--bg-light);
+    width: 25%; /* Define uma largura para a coluna de recursos */
+    padding-left: 2rem;
+}
+
+.product-column.featured {
+    border-left: 2px solid var(--primary-cyan);
+    border-right: 2px solid var(--primary-cyan);
+    background-color: rgba(22, 254, 237, 0.03);
+}
+
+.product-header .price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: var(--font-primary);
+    color: var(--primary-cyan);
+}
+
+.feature-name {
+    text-align: left;
+    padding-left: 2rem;
+    font-weight: 500;
+}
+
+.feature-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-cyan);
+}
+.feature-value:not(:empty)::before {
+    content: "✓";
+}
+.feature-value:empty::before {
+    content: "—";
+    color: var(--primary-gray);
+    font-weight: 400;
+}
+
+.cta-row td {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: none;
+}
+
+
+/* 2. Grade de Produtos (Conheça cada solução) - Usando Flexbox para centralização */
+.products-list__grid {
+    display: flex; /* MUDADO DE GRID PARA FLEX */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os cards, resolvendo o problema do "Fullstack" */
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.product-summary-card {
+    flex: 1 1 320px; /* Define o crescimento, encolhimento e base de largura dos cards */
+    max-width: 380px; /* Impede que os cards fiquem muito largos */
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo interno verticalmente */
+    text-align: left; /* Alinha o texto à esquerda para melhor legibilidade */
+}
+
+.product-summary-card__header {
+    align-items: center;
+}
+
+.product-summary-card__objective {
+    flex-grow: 1; /* Faz com que a descrição ocupe o espaço disponível, alinhando os botões */
+}
+
+.product-highlights {
+    text-align: left;
+}
+
+.product-price {
+    text-align: left;
+}
+
+.product-summary-card__cta {
+    margin-top: auto; /* Empurra a CTA para o final do card */
+}
