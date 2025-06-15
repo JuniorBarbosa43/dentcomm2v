@@ -2430,3 +2430,25 @@ input, textarea, select {
         width: 100%;
     }
 }
+
+/* ETAPA 4: FUNCIONALIDADES AVANÇADAS */
+
+/* Estilos para Validação do Formulário */
+.form-group {
+    position: relative;
+    padding-bottom: 1.25rem; /* Espaço para a mensagem de erro */
+}
+
+.form-input.error {
+    border-color: var(--error);
+    background-color: rgba(239, 68, 68, 0.05);
+}
+
+.error-message {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: var(--error);
+    font-size: 0.875rem;
+    font-weight: 500;
+}

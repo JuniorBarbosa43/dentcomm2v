@@ -8,11 +8,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="css/style.css">
-    
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -112,33 +110,37 @@
                         <p>Preencha o formulário e nossa equipe entrará em contato em até 2 horas úteis.</p>
                     </div>
                     
-                    <form id="contact-form" class="contact-form">
+                    <form id="contact-form" class="contact-form" novalidate>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Nome completo *</label>
-                                <input type="text" id="name" name="name" required>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                                <span class="error-message"></span>
                             </div>
                             <div class="form-group">
                                 <label for="email">E-mail *</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                                <span class="error-message"></span>
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="phone">Telefone/WhatsApp *</label>
-                                <input type="tel" id="phone" name="phone" required>
+                                <input type="tel" id="phone" name="phone" class="form-input" required>
+                                <span class="error-message"></span>
                             </div>
                             <div class="form-group">
                                 <label for="clinic-name">Nome da clínica</label>
-                                <input type="text" id="clinic-name" name="clinic-name">
+                                <input type="text" id="clinic-name" name="clinic-name" class="form-input">
+                                <span class="error-message"></span>
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="specialty">Especialidade principal</label>
-                                <select id="specialty" name="specialty">
+                                <select id="specialty" name="specialty" class="form-input">
                                     <option value="">Selecione</option>
                                     <option value="clinica-geral">Clínica Geral</option>
                                     <option value="ortodontia">Ortodontia</option>
@@ -150,10 +152,11 @@
                                     <option value="pediatria">Odontopediatria</option>
                                     <option value="outras">Outras</option>
                                 </select>
+                                <span class="error-message"></span>
                             </div>
                             <div class="form-group">
                                 <label for="monthly-revenue">Faturamento mensal aproximado</label>
-                                <select id="monthly-revenue" name="monthly-revenue">
+                                <select id="monthly-revenue" name="monthly-revenue" class="form-input">
                                     <option value="">Selecione</option>
                                     <option value="ate-20k">Até R$ 20.000</option>
                                     <option value="20k-50k">R$ 20.000 - R$ 50.000</option>
@@ -161,87 +164,21 @@
                                     <option value="100k-200k">R$ 100.000 - R$ 200.000</option>
                                     <option value="acima-200k">Acima de R$ 200.000</option>
                                 </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="current-marketing">Você já investe em marketing digital?</label>
-                            <div class="radio-group">
-                                <label class="radio-option">
-                                    <input type="radio" name="current-marketing" value="nao">
-                                    <span class="radio-custom"></span>
-                                    Não, estou começando agora
-                                </label>
-                                <label class="radio-option">
-                                    <input type="radio" name="current-marketing" value="pouco">
-                                    <span class="radio-custom"></span>
-                                    Sim, mas com resultados limitados
-                                </label>
-                                <label class="radio-option">
-                                    <input type="radio" name="current-marketing" value="sim">
-                                    <span class="radio-custom"></span>
-                                    Sim, e quero melhorar os resultados
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="main-goal">Qual seu principal objetivo?</label>
-                            <div class="checkbox-group">
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="goals" value="mais-pacientes">
-                                    <span class="checkbox-custom"></span>
-                                    Atrair mais pacientes
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="goals" value="aumentar-ticket">
-                                    <span class="checkbox-custom"></span>
-                                    Aumentar ticket médio
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="goals" value="autoridade">
-                                    <span class="checkbox-custom"></span>
-                                    Construir autoridade
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="goals" value="fidelizar">
-                                    <span class="checkbox-custom"></span>
-                                    Fidelizar pacientes
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="goals" value="automatizar">
-                                    <span class="checkbox-custom"></span>
-                                    Automatizar processos
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="goals" value="expandir">
-                                    <span class="checkbox-custom"></span>
-                                    Expandir para novas unidades
-                                </label>
+                                <span class="error-message"></span>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Conte-nos mais sobre sua clínica e objetivos</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Descreva sua situação atual, principais desafios e o que espera alcançar..."></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="preferred-contact">Horário preferencial para contato</label>
-                            <select id="preferred-contact" name="preferred-contact">
-                                <option value="">Selecione</option>
-                                <option value="manha">Manhã (8h às 12h)</option>
-                                <option value="tarde">Tarde (12h às 18h)</option>
-                                <option value="noite">Noite (18h às 20h)</option>
-                                <option value="qualquer">Qualquer horário</option>
-                            </select>
+                            <textarea id="message" name="message" class="form-input" rows="4" placeholder="Descreva sua situação atual, principais desafios e o que espera alcançar..."></textarea>
+                            <span class="error-message"></span>
                         </div>
                         
                         <button type="submit" class="btn btn--primary btn--large" id="submit-btn">
                             Solicitar consulta gratuita
                         </button>
                         
-                        <div id="form-status" class="form-status"></div>
+                        <div id="form-status"></div>
                         
                         <p class="form-disclaimer">
                             Ao enviar este formulário, você concorda em receber comunicações da DentComm. 
@@ -310,27 +247,19 @@
                         <h4>Nossos compromissos</h4>
                         <div class="guarantee-list">
                             <div class="guarantee-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 <span>Resposta em até 2 horas úteis</span>
                             </div>
                             <div class="guarantee-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 <span>Consulta 100% gratuita</span>
                             </div>
                             <div class="guarantee-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 <span>Análise personalizada da sua clínica</span>
                             </div>
                             <div class="guarantee-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 <span>Sem compromisso ou pressão de vendas</span>
                             </div>
                         </div>
