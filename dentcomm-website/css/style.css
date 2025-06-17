@@ -1,6 +1,6 @@
 /*
  * DENTCOMM - FOLHA DE ESTILO PREMIUM
- * Versão Final: 5.0.4 (Polimento Final Corrigido)
+ * Versão Final: 5.0.5 (Correção Final de Bandeiras e Contraste)
  * Descrição: Arquivo CSS completo com todas as correções e melhorias.
  */
 
@@ -565,17 +565,28 @@ input, textarea, select {
 }
 
 
-/* CORREÇÃO/MELHORIA: Botões de idioma com bandeiras */
+/* CORREÇÃO/MELHORIA: Botões de idioma com imagens de bandeiras */
 .lang-switcher__btn {
-    font-size: 24px; /* Tamanho da bandeira */
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
     transition: var(--transition-smooth);
+    width: 28px; /* Largura do botão */
+    height: 28px; /* Altura do botão */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .lang-switcher__btn:hover {
     transform: scale(1.1);
+}
+#lang-switcher-flag {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
 
 /* Mobile menu */
@@ -1494,7 +1505,6 @@ input, textarea, select {
 [data-theme="dark"] .product-summary-card__objective,
 [data-theme="dark"] .section-subtitle,
 [data-theme="dark"] .product-header__objective,
-[data-theme="dark"] .info-card,
 [data-theme="dark"] .value-card p {
     color: #c1c1c1;
     opacity: 1;
@@ -1524,13 +1534,19 @@ input, textarea, select {
 }
 
 /* CORREÇÃO: Garante contraste do texto .highlight em fundos verdes */
-.cta-section .highlight,
-.cta-final .highlight,
-.highlight-section .highlight {
+.cta-section .highlight, .cta-final .highlight, .highlight-section .display-highlight {
     background: none !important;
+    -webkit-background-clip: initial !important;
     -webkit-text-fill-color: var(--primary-dark) !important;
     color: var(--primary-dark) !important;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Sombra sutil para destacar */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] .cta-section .highlight, 
+[data-theme="dark"] .cta-final .highlight, 
+[data-theme="dark"] .highlight-section .display-highlight {
+    -webkit-text-fill-color: #FFFFFF !important;
+    color: #FFFFFF !important;
 }
 
 .cta-actions,

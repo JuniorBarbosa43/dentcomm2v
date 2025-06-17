@@ -822,28 +822,34 @@ function setLanguage(lang) {
 }
 
 /**
- * Inicializa o seletor de idiomas.
+ * Inicializa o seletor de idiomas com um botão único que alterna as bandeiras.
  */
 function initLanguageSwitcher() {
+    // 1. Encontra o botão único no documento
     const langSwitcherBtn = document.getElementById('lang-switcher-btn');
-    if (!langSwitcherBtn) return;
+    if (!langSwitcherBtn) return; // Se o botão não existir, a função para.
 
+    // 2. Pega o idioma salvo no navegador do usuário, ou define 'pt' como padrão.
     let currentLang = localStorage.getItem('language') || 'pt';
 
+    // 3. Função para atualizar a bandeira no botão
     const updateButtonFlag = (lang) => {
         langSwitcherBtn.innerHTML = lang === 'es' ? '🇪🇸' : '🇧🇷';
     };
     
-    // Set initial state
+    // 4. Define o idioma e a bandeira corretos quando a página carrega
     setLanguage(currentLang);
     updateButtonFlag(currentLang);
 
+    // 5. Adiciona o evento de clique ao botão
     langSwitcherBtn.addEventListener('click', () => {
-        // Toggle language
+        // Alterna o idioma atual
         currentLang = currentLang === 'pt' ? 'es' : 'pt';
+        
+        // Salva a nova escolha no navegador
         localStorage.setItem('language', currentLang);
         
-        // Update UI
+        // Atualiza todo o site com o novo idioma e a nova bandeira
         setLanguage(currentLang);
         updateButtonFlag(currentLang);
     });
