@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DentComm Flow - Nossas Soluções</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
 </head>
@@ -15,7 +12,7 @@
     <header class="header">
         <div class="container header__container">
             <a href="index.html" class="header__logo">
-                <img src="assets/images/logo.svg" alt="Logo DentComm">
+                <img src="assets/images/logo.svg" alt="Logo DentComm" loading="lazy">
             </a>
             <nav class="nav">
                 <ul class="nav__list">
@@ -26,11 +23,12 @@
                 </ul>
             </nav>
             <div class="header__actions">
-                <div class="theme-toggle" id="theme-toggle" aria-label="Alternar tema"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+                    <span class="theme-toggle__icon sun-icon">☀️</span>
+                    <span class="theme-toggle__icon moon-icon">🌙</span>
+                </button>
                 <div class="lang-switcher">
-                    <button id="lang-pt" class="lang-switcher__btn active">PT</button>
-                    <span>/</span>
-                    <button id="lang-es" class="lang-switcher__btn">ES</button>
+                    <button id="lang-switcher-btn" class="lang-switcher__btn"></button>
                 </div>
                 <button class="nav-toggle" aria-label="Abrir menu">
                     <span class="nav-toggle__bar"></span>
@@ -54,27 +52,30 @@
             <div class="container product-details__container">
                 <div class="product-details__content">
                     <div class="product-details__visual scroll-reveal">
-                        <img data-src="https://images.unsplash.com/photo-1580231969038-a24b21a32595?q=80&w=1974&auto=format&fit=crop" alt="Fluxo de automação do plano Flow" loading="lazy">
+                         <video poster="https://images.unsplash.com/photo-1580231969038-a24b21a32595?q=80&w=1974&auto=format&fit=crop" controls muted autoplay loop>
+                            <source src="" type="video/mp4">
+                            Seu navegador não suporta a tag de vídeo.
+                        </video>
                     </div>
 
                     <div class="info-block scroll-reveal">
                         <h3 data-key="flowTargetTitle">Para quem é o plano Flow?</h3>
-                        <ul class="check-list">
-                            <li data-key="flowTargetLi1">Dentistas e clínicas que já têm uma presença digital básica estruturada.</li>
-                            <li data-key="flowTargetLi2">Quem deseja aumentar o volume de pacientes com previsibilidade.</li>
-                            <li data-key="flowTargetLi3">Profissionais que sentem estar perdendo oportunidades por falta de tempo ou automação.</li>
-                            <li data-key="flowTargetLi4">Quem precisa organizar o atendimento e mensurar o retorno real com clareza.</li>
-                        </ul>
+                        <div class="info-grid">
+                            <div class="info-card" data-key="flowTargetLi1">Dentistas e clínicas que já têm uma presença digital básica estruturada.</div>
+                            <div class="info-card" data-key="flowTargetLi2">Quem deseja aumentar o volume de pacientes com previsibilidade.</div>
+                            <div class="info-card" data-key="flowTargetLi3">Profissionais que sentem estar perdendo oportunidades por falta de tempo ou automação.</div>
+                            <div class="info-card" data-key="flowTargetLi4">Quem precisa organizar o atendimento e mensurar o retorno real com clareza.</div>
+                        </div>
                     </div>
                     <div class="info-block scroll-reveal">
                         <h3 data-key="flowPainsTitle">Principais Dores que Resolvemos</h3>
-                        <ul class="check-list">
-                            <li data-key="flowPainsLi1">Captação inconsistente: um mês a agenda está cheia, no outro, vazia.</li>
-                            <li data-key="flowPainsLi2">Baixa conversão: os pacientes chegam pelo marketing, mas não agendam.</li>
-                            <li data-key="flowPainsLi3">Atendimento confuso, repetitivo e sem padronização.</li>
-                            <li data-key="flowPainsLi4">Falta de nutrição para leads que não fecham na primeira conversa.</li>
-                            <li data-key="flowPainsLi5">Produção de conteúdo é uma obrigação cansativa e pouco eficaz.</li>
-                        </ul>
+                        <div class="info-grid">
+                            <div class="info-card" data-key="flowPainsLi1">Captação inconsistente: um mês a agenda está cheia, no outro, vazia.</div>
+                            <div class="info-card" data-key="flowPainsLi2">Baixa conversão: os pacientes chegam pelo marketing, mas não agendam.</div>
+                            <div class="info-card" data-key="flowPainsLi3">Atendimento confuso, repetitivo e sem padronização.</div>
+                            <div class="info-card" data-key="flowPainsLi4">Falta de nutrição para leads que não fecham na primeira conversa.</div>
+                            <div class="info-card" data-key="flowPainsLi5">Produção de conteúdo é uma obrigação cansativa e pouco eficaz.</div>
+                        </div>
                     </div>
                 </div>
 
@@ -83,8 +84,8 @@
                         <h3 data-key="investmentTitle">Investimento</h3>
                         <div class="investment-card__price" data-price-brl="3497">A partir de <strong>R$ 3.497</strong> /mês</div>
                         <div class="investment-card__details">
-                            <p><strong data-key="adsBudgetText">Verba de anúncios:</strong> USD 450 (sugerido)</p>
-                            <p><strong data-key="contractText">Contrato mínimo:</strong> 4 meses</p>
+                            <p><strong data-key="adsBudgetText">Verba de anúncios:</strong> <span data-key="adsBudgetFlow">USD 450 (sugerido)</span></p>
+                            <p><strong data-key="contractText">Contrato mínimo:</strong> <span data-key="contractFlow">4 meses</span></p>
                         </div>
                         <a href="contato.html" class="btn btn--primary btn--large" data-key="btnTalkToConsultant">Falar com um Consultor</a>
                     </div>
@@ -170,13 +171,20 @@
     <footer class="footer">
         <div class="container footer__container">
             <div class="footer__brand">
-                <a href="index.html"><img src="assets/images/logo.svg" alt="Logo DentComm" class="footer__logo"></a>
+                <a href="index.html"><img src="assets/images/logo.svg" alt="Logo DentComm" class="footer__logo" loading="lazy"></a>
                 <p class="footer__tagline" data-key="footerTagline">Transformando clínicas dentais em referências de mercado através de marketing inteligente e resultados comprovados.</p>
             </div>
             <div class="footer__links">
                 <div class="footer__column"><h4 data-key="footerNav">Navegação</h4><ul><li><a href="index.html" data-key="navHome">Início</a></li><li><a href="quem-somos.html" data-key="navAbout">Quem Somos</a></li><li><a href="produtos.html" data-key="navProducts">Produtos</a></li><li><a href="contato.html" data-key="navContact">Contato</a></li></ul></div>
                 <div class="footer__column"><h4 data-key="footerSolutions">Soluções</h4><ul><li><a href="produto-base.html">DentComm Base</a></li><li><a href="produto-flow.html">DentComm Flow</a></li><li><a href="produto-core360.html">DentComm Core360</a></li><li><a href="produto-fullstack.html">DentComm Fullstack</a></li></ul></div>
-                <div class="footer__column"><h4 data-key="footerContact">Contato</h4><ul><li>contato@dentcomm.com</li><li>+55 (11) 99999-8888</li><li>São Paulo, Brasil</li></ul></div>
+                <div class="footer__column">
+                    <h4 data-key="footerContact">Contato</h4>
+                    <ul>
+                        <li>contato@dentcomm.com</li>
+                        <li>+55 (11) 99999-8888</li>
+                        <li data-key="footerAddress">Avenida Paulista, 1374 – 16º Andar, Bela Vista, CEP 01310-100 | São Paulo – SP, Brasil</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="footer__bottom">

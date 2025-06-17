@@ -11,7 +11,7 @@
 
     <header class="header">
         <div class="container header__container">
-            <a href="index.html" class="header__logo"><img src="assets/images/logo.svg" alt="Logo DentComm"></a>
+            <a href="index.html" class="header__logo"><img src="assets/images/logo.svg" alt="Logo DentComm" loading="lazy"></a>
             <nav class="nav">
                 <ul class="nav__list">
                     <li><a href="index.html" class="nav__link" data-key="navHome">Início</a></li>
@@ -21,8 +21,13 @@
                 </ul>
             </nav>
             <div class="header__actions">
-                <div class="theme-toggle" id="theme-toggle" aria-label="Alternar tema"></div>
-                <div class="lang-switcher"><button id="lang-pt" class="lang-switcher__btn active">PT</button><span>/</span><button id="lang-es" class="lang-switcher__btn">ES</button></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+                    <span class="theme-toggle__icon sun-icon">☀️</span>
+                    <span class="theme-toggle__icon moon-icon">🌙</span>
+                </button>
+                <div class="lang-switcher">
+                    <button id="lang-switcher-btn" class="lang-switcher__btn"></button>
+                </div>
                 <button class="nav-toggle" aria-label="Abrir menu"><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span></button>
             </div>
         </div>
@@ -40,25 +45,32 @@
         <section class="product-details">
             <div class="container product-details__container">
                 <div class="product-details__content">
-                    <div class="product-details__visual scroll-reveal"><img data-src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1974&auto=format&fit=crop" alt="Dashboard de BI e Analytics do plano Core360" loading="lazy"></div>
+                    <div class="product-details__visual scroll-reveal">
+                        <video poster="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1974&auto=format&fit=crop" controls muted autoplay loop>
+                            <source src="" type="video/mp4">
+                            Seu navegador não suporta a tag de vídeo.
+                        </video>
+                    </div>
+
                     <div class="info-block scroll-reveal">
                         <h3 data-key="core360TargetTitle">Para quem é o plano Core360?</h3>
-                        <ul class="check-list">
-                            <li data-key="core360TargetLi1">Clínicas que possuem pelo menos duas especialidades ativas.</li>
-                            <li data-key="core360TargetLi2">Quem já validou a presença digital e deseja escalar com controle.</li>
-                            <li data-key="core360TargetLi3">Estruturas com equipe interna ou atendimento terceirizado estruturado.</li>
-                            <li data-key="core360TargetLi4">Quem precisa de um sistema previsível para gestão comercial e marketing.</li>
-                        </ul>
+                        <div class="info-grid">
+                            <div class="info-card" data-key="core360TargetLi1">Clínicas que possuem pelo menos duas especialidades ativas.</div>
+                            <div class="info-card" data-key="core360TargetLi2">Quem já validou a presença digital e deseja escalar com controle.</div>
+                            <div class="info-card" data-key="core360TargetLi3">Estruturas com equipe interna ou atendimento terceirizado estruturado.</div>
+                            <div class="info-card" data-key="core360TargetLi4">Quem precisa de um sistema previsível para gestão comercial e marketing.</div>
+                        </div>
                     </div>
+
                     <div class="info-block scroll-reveal">
                         <h3 data-key="core360PainsTitle">Principais Dores que Resolvemos</h3>
-                        <ul class="check-list">
-                            <li data-key="core360PainsLi1">Crescimento desorganizado e que se tornou difícil de escalar.</li>
-                            <li data-key="core360PainsLi2">Equipe sem um padrão claro de atendimento e conversão.</li>
-                            <li data-key="core360PainsLi3">Falta de rastreamento do retorno por campanha e por canal.</li>
-                            <li data-key="core360PainsLi4">ROI baixo por ausência de uma visão integrada das ações de marketing.</li>
-                            <li data-key="core360PainsLi5">Perda de pacientes por falhas na jornada de nutrição e agendamento.</li>
-                        </ul>
+                        <div class="info-grid">
+                            <div class="info-card" data-key="core360PainsLi1">Crescimento desorganizado e que se tornou difícil de escalar.</div>
+                            <div class="info-card" data-key="core360PainsLi2">Equipe sem um padrão claro de atendimento e conversão.</div>
+                            <div class="info-card" data-key="core360PainsLi3">Falta de rastreamento do retorno por campanha e por canal.</div>
+                            <div class="info-card" data-key="core360PainsLi4">ROI baixo por ausência de uma visão integrada das ações de marketing.</div>
+                            <div class="info-card" data-key="core360PainsLi5">Perda de pacientes por falhas na jornada de nutrição e agendamento.</div>
+                        </div>
                     </div>
                 </div>
                 <div class="product-details__investment">
@@ -66,8 +78,8 @@
                         <h3 data-key="investmentTitle">Investimento</h3>
                         <div class="investment-card__price" data-price-brl="5997">A partir de <strong>R$ 5.997</strong> /mês</div>
                         <div class="investment-card__details">
-                            <p><strong data-key="adsBudgetText">Verba de anúncios:</strong> USD 1000 (sugerido)</p>
-                            <p><strong data-key="contractText">Contrato mínimo:</strong> 6 meses</p>
+                            <p><strong data-key="adsBudgetText">Verba de anúncios:</strong> <span data-key="adsBudgetCore360">USD 1000 (sugerido)</span></p>
+                            <p><strong data-key="contractText">Contrato mínimo:</strong> <span data-key="contractCore360">6 meses</span></p>
                         </div>
                         <a href="contato.html" class="btn btn--primary btn--large" data-key="btnTalkToConsultant">Falar com um Consultor</a>
                     </div>
@@ -92,13 +104,20 @@
     <footer class="footer">
         <div class="container footer__container">
             <div class="footer__brand">
-                <a href="index.html"><img src="assets/images/logo.svg" alt="Logo DentComm" class="footer__logo"></a>
+                <a href="index.html"><img src="assets/images/logo.svg" alt="Logo DentComm" class="footer__logo" loading="lazy"></a>
                 <p class="footer__tagline" data-key="footerTagline">Transformando clínicas dentais em referências de mercado através de marketing inteligente e resultados comprovados.</p>
             </div>
             <div class="footer__links">
                 <div class="footer__column"><h4 data-key="footerNav">Navegação</h4><ul><li><a href="index.html" data-key="navHome">Início</a></li><li><a href="quem-somos.html" data-key="navAbout">Quem Somos</a></li><li><a href="produtos.html" data-key="navProducts">Produtos</a></li><li><a href="contato.html" data-key="navContact">Contato</a></li></ul></div>
                 <div class="footer__column"><h4 data-key="footerSolutions">Soluções</h4><ul><li><a href="produto-base.html">DentComm Base</a></li><li><a href="produto-flow.html">DentComm Flow</a></li><li><a href="produto-core360.html">DentComm Core360</a></li><li><a href="produto-fullstack.html">DentComm Fullstack</a></li></ul></div>
-                <div class="footer__column"><h4 data-key="footerContact">Contato</h4><ul><li>contato@dentcomm.com</li><li>+55 (11) 99999-8888</li><li>São Paulo, Brasil</li></ul></div>
+                <div class="footer__column">
+                    <h4 data-key="footerContact">Contato</h4>
+                    <ul>
+                        <li>contato@dentcomm.com</li>
+                        <li>+55 (11) 99999-8888</li>
+                        <li data-key="footerAddress">Avenida Paulista, 1374 – 16º Andar, Bela Vista, CEP 01310-100 | São Paulo – SP, Brasil</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="footer__bottom">
