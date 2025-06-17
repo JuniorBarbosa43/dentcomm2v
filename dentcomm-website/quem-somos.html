@@ -4,14 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quem Somos - DentComm</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="css/style.css">
-    
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -19,7 +12,7 @@
     <header class="header">
         <div class="container header__container">
             <a href="index.html" class="header__logo">
-                <img src="https://svgshare.com/i/18An.svg" alt="Logo DentComm">
+                <img src="assets/images/logo.svg" alt="Logo DentComm">
             </a>
             <nav class="nav">
                 <ul class="nav__list">
@@ -30,6 +23,7 @@
                 </ul>
             </nav>
             <div class="header__actions">
+                <div class="theme-toggle" id="theme-toggle" aria-label="Alternar tema"></div>
                 <div class="lang-switcher">
                     <button id="lang-pt" class="lang-switcher__btn active">PT</button>
                     <span>/</span>
@@ -45,7 +39,6 @@
     </header>
 
     <main>
-
         <section class="page-header">
             <div class="container">
                 <h1 class="page-header__title" data-key="aboutTitle">Marketing com <span class="highlight">propósito.</span><br>Crescimento com <span class="highlight">consciência.</span></h1>
@@ -57,7 +50,7 @@
                 <div class="about-intro__text">
                     <h2 data-key="aboutIntroTitle">Acreditamos que todo dentista pode ser mais que um profissional da saúde. <span class="text-highlight">Pode ser uma marca. Uma referência. Um líder.</span></h2>
                     <p data-key="aboutIntroP1">Mas para isso, precisa de mais do que marketing bonito: precisa de estratégia, clareza e retorno.  Somos uma agência de marketing e automação full service especializada em dentistas da América Latina.  Nascemos para transformar a frustração de muitos profissionais em progresso real.</p>
-                    <p data-key="aboutIntroP2">Na DentComm, não prometemos mágica. <strong data-key="aboutIntroP2Strong">Prometemos estrutura. Performance com posicionamento.</strong>  Ajudamos dentistas a crescerem com inteligência, respeito à ciência e foco em resultado. </p>
+                    <p data-key="aboutIntroP2">Na DentComm, não prometemos mágica. <strong>Prometemos estrutura. Performance com posicionamento.</strong>  Ajudamos dentistas a crescerem com inteligência, respeito à ciência e foco em resultado. </p>
                 </div>
                 <div class="about-intro__image">
                     <img data-src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop" alt="Equipe DentComm em reunião estratégica" loading="lazy">
@@ -84,40 +77,27 @@
                 <a href="produtos.html" class="btn btn--primary" data-key="aboutCtaBtn">Conheça Nossas Soluções</a>
             </div>
         </section>
-
     </main>
     
     <footer class="footer">
         <div class="container footer__container">
             <div class="footer__brand">
-                <a href="index.html">
-                    <img src="https://svgshare.com/i/18An.svg" alt="Logo DentComm" class="footer__logo">
-                </a>
-                <p class="footer__tagline" data-key="footerTagline">Marketing com propósito. Crescimento com consciência.</p>
+                <a href="index.html"><img src="assets/images/logo.svg" alt="Logo DentComm" class="footer__logo"></a>
+                <p class="footer__tagline" data-key="footerTagline">Transformando clínicas dentais em referências de mercado através de marketing inteligente e resultados comprovados.</p>
             </div>
             <div class="footer__links">
-                <h4 data-key="footerNav">Navegação</h4>
-                <ul>
-                    <li><a href="index.html" data-key="navHome">Início</a></li>
-                    <li><a href="quem-somos.html" data-key="navAbout">Quem Somos</a></li>
-                    <li><a href="produtos.html" data-key="navProducts">Produtos</a></li>
-                    <li><a href="contato.html" data-key="navContact">Contato</a></li>
-                </ul>
-            </div>
-            <div class="footer__contact">
-                <h4 data-key="footerContact">Contato</h4>
-                <p>contato@dentcomm.com</p>
-                <p>+55 (11) 99999-8888</p>
+                <div class="footer__column"><h4 data-key="footerNav">Navegação</h4><ul><li><a href="index.html" data-key="navHome">Início</a></li><li><a href="quem-somos.html" data-key="navAbout">Quem Somos</a></li><li><a href="produtos.html" data-key="navProducts">Produtos</a></li><li><a href="contato.html" data-key="navContact">Contato</a></li></ul></div>
+                <div class="footer__column"><h4 data-key="footerSolutions">Soluções</h4><ul><li><a href="produto-base.html">DentComm Base</a></li><li><a href="produto-flow.html">DentComm Flow</a></li><li><a href="produto-core360.html">DentComm Core360</a></li><li><a href="produto-fullstack.html">DentComm Fullstack</a></li></ul></div>
+                <div class="footer__column"><h4 data-key="footerContact">Contato</h4><ul><li>contato@dentcomm.com</li><li>+55 (11) 99999-8888</li><li>São Paulo, Brasil</li></ul></div>
             </div>
         </div>
         <div class="footer__bottom">
-            <p>&copy; 2024 DentComm. <span data-key="footerRights">Todos os direitos reservados.</span></p>
+            <div class="container footer__bottom-content"><p>© 2024 DentComm. <span data-key="footerRights">Todos os direitos reservados.</span></p></div>
         </div>
     </footer>
 
     <a href="https://wa.me/5511999998888" class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 .5c58.4 0 112.2 22.8 152.6 63.1l-2.1 1.9c-1.6 1.4-3.2 2.8-4.9 4.1-18.1 13.9-33.1 31.2-44.2 50.9-12.8 22.8-19.1 48.4-19.1 74.3 0 5.2-.2 10.5-.5 15.6-3.3 54-28.7 100.2-69.5 133.2-4.2 3.4-8.5 6.6-13.1 9.5-2.9 1.9-5.8 3.7-8.8 5.3-33.1 18.9-70.5 28.7-109.1 28.7-35.8 0-70.3-8.9-99.5-25.6l-2.9-1.7-107.5 28.1 28.8-104.9-1.9-3.1C55.2 355 34.4 309.8 34.4 256c0-105.7 85.7-191.5 191.5-191.5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/></svg>
     </a>
-
 </body>
 </html>
