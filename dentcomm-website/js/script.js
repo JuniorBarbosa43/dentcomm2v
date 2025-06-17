@@ -1,9 +1,9 @@
 /**
  * DENTCOMM - JAVASCRIPT MODERNO E FUNCIONAL
- * Versão Final: 5.0.0
+ * Versão Final: 5.0.4 (Polimento Final Corrigido)
  * Descrição: Script completo com todas as funcionalidades solicitadas,
  * incluindo tradução completa (PT/ES), modo claro/escuro, troca de moeda,
- * calculadora de ROI, validação de formulário e otimizações de performance.
+ * calculadora de ROI, validação de formulário aprimorada e otimizações de performance.
  */
 
 // INICIALIZAÇÃO GERAL
@@ -40,6 +40,7 @@ const translations = {
         footerNav: 'Navegação',
         footerSolutions: 'Soluções',
         footerContact: 'Contato',
+        footerAddress: 'Avenida Paulista, 1374 – 16º Andar, Bela Vista, CEP 01310-100 | São Paulo – SP, Brasil',
         footerRights: 'Todos os direitos reservados.',
         footerPrivacy: 'Política de Privacidade',
         footerTerms: 'Termos de Uso',
@@ -52,7 +53,7 @@ const translations = {
         heroStat1: 'Dentistas atendidos',
         heroStat2: 'Aumento médio de pacientes',
         heroStat3: 'ROI médio dos clientes',
-        valuesTitle: 'Por que escolher a <span class="highlight">DentComm</span>?',
+        valuesTitle: 'Nossos <span class="highlight">Valores</span>',
         valuesSubtitle: 'Os pilares que nos tornam únicos no marketing dental da América Latina.',
         value1Title: 'Resultados Comprovados',
         value1Desc: 'Mais de 500 dentistas transformaram suas clínicas conosco. ROI médio de 8x em 6 meses.',
@@ -60,10 +61,12 @@ const translations = {
         value2Desc: 'Sistemas que trabalham 24/7 para captar, nutrir e converter leads em pacientes reais.',
         value3Title: 'Especialização Dental',
         value3Desc: 'Entendemos as particularidades do mercado odontológico e criamos estratégias específicas.',
-        value4Title: 'Suporte Personalizado',
-        value4Desc: 'Acompanhamento dedicado com consultores especializados em crescimento de clínicas.',
         productsShowcaseTitle: 'Soluções <span class="highlight">sob medida</span> para cada momento',
         productsShowcaseSubtitle: 'Do dentista que está começando no digital à clínica que busca escalar sua operação.',
+        baseDesc: 'Ideal para dentistas que querem começar no marketing digital com estrutura sólida e resultados rápidos.',
+        flowDesc: 'Para clínicas que querem automatizar processos e escalar a captação de pacientes com inteligência.',
+        core360Desc: 'Solução completa que integra marketing, vendas e gestão em um ecossistema único de crescimento.',
+        fullstackDesc: 'Assumimos 100% da sua operação digital para você focar exclusivamente no que faz de melhor: cuidar dos pacientes.',
         productsCtaText: 'Não sabe qual solução é ideal para você?',
         productsCtaBtn: 'Fale com um especialista',
         roiTitle: 'Calcule o <span class="highlight">potencial</span> da sua clínica',
@@ -116,9 +119,21 @@ const translations = {
         // QUEM-SOMOS.HTML
         aboutTitle: 'Marketing com <span class="highlight">propósito.</span><br>Crescimento com <span class="highlight">consciência.</span>',
         aboutIntroTitle: 'Acreditamos que todo dentista pode ser mais que um profissional da saúde. <span class="text-highlight">Pode ser uma marca. Uma referência. Um líder.</span>',
-        aboutIntroP1: 'Mas para isso, precisa de mais do que marketing bonito: precisa de estratégia, clareza e retorno.  Somos uma agência de marketing e automação full service especializada em dentistas da América Latina.  Nascemos para transformar a frustração de muitos profissionais em progresso real.',
+        aboutIntroP1: 'Mas para isso, precisa de mais do que marketing bonito: precisa de estratégia, clareza e retorno. Somos uma agência de marketing e automação full service especializada em dentistas da América Latina. Nascemos para transformar a frustração de muitos profissionais em progresso real.',
         aboutIntroP2: 'Na DentComm, não prometemos mágica. <strong>Prometemos estrutura. Performance com posicionamento.</strong> Ajudamos dentistas a crescerem com inteligência, respeito à ciência e foco em resultado.',
         aboutResult: 'Mais do que marketing. <span class="display-highlight">Resultado!</span>',
+        valueClareza: 'Clareza',
+        valueClarezaDesc: 'Comunicação transparente e relatórios que você entende.',
+        valueResultado: 'Resultado',
+        valueResultadoDesc: 'Foco total em performance e crescimento mensurável.',
+        valueInteligencia: 'Inteligência',
+        valueInteligenciaDesc: 'Estratégias baseadas em dados para decisões assertivas.',
+        valueTransformacao: 'Transformação',
+        valueTransformacaoDesc: 'Elevamos sua clínica a um novo patamar de referência.',
+        valueParceria: 'Parceria',
+        valueParceriaDesc: 'Seu sucesso é o nosso sucesso. Crescemos juntos.',
+        valuePerformance: 'Performance',
+        valuePerformanceDesc: 'Otimização contínua para maximizar seu ROI.',
         aboutCureTitle: 'Quando o marketing é bem-feito, ele <span class="text-highlight">cura</span> também:',
         aboutCureText: 'Cura a <strong class="highlight">insegurança</strong> de não saber por onde começar.<br>Cura a <strong class="highlight">estagnação</strong> de uma agenda que não cresce.<br>Cura o <strong class="highlight">medo de crescer</strong> de forma desorganizada.',
         aboutCtaTitle: 'Estamos prontos para transformar sua jornada. <span class="highlight">Vamos juntos?</span>',
@@ -130,6 +145,20 @@ const translations = {
         compareTitle: 'Compare nossas <span class="highlight">soluções</span>',
         compareSubtitle: 'Encontre a solução ideal para o seu perfil e objetivos.',
         featureColumnHeader: 'Recursos',
+        productBase: 'Base',
+        productFlow: 'Flow',
+        productCore360: 'Core360',
+        productFullstack: 'Fullstack',
+        featureSite: 'Site profissional',
+        featureGoogle: 'Google Ads',
+        featureSocial: 'Redes sociais',
+        featureAutomation: 'Automação de leads',
+        featureCRM: 'CRM integrado',
+        featureWhatsapp: 'WhatsApp Business',
+        featureBI: 'BI e Analytics',
+        featureTeam: 'Gestão de equipe',
+        featureDedicated: 'Equipe dedicada',
+        featureSupport: 'Suporte 24/7',
         baseTagline: 'Essencial',
         flowTagline: 'Automação',
         core360Tagline: 'Completo',
@@ -140,8 +169,10 @@ const translations = {
         gridTitle: 'Conheça cada <span class="highlight">solução</span> em detalhes',
         badgeBeginner: 'Iniciante',
         badgeAdvanced: 'Avançado',
-        priceUponRequest: 'Sob consulta',
+        priceUponRequest: 'sob consulta',
         pricePersonalized: 'Personalizado',
+        priceFrom: 'A partir de',
+        pricePeriod: '/mês',
         baseGridObjective: 'A estrutura essencial para atrair pacientes, construir autoridade e entender o retorno de suas ações de forma prática.',
         flowGridObjective: 'Eleve o nível de captação, conversão e gestão da jornada do paciente com automação e escala inteligente.',
         core360GridObjective: 'Integre marketing, atendimento e gestão em um ecossistema completo para previsibilidade de agenda e crescimento sustentável.',
@@ -160,7 +191,6 @@ const translations = {
         faq5Answer: 'Não, o investimento em mídia paga (Google Ads, Facebook Ads) é adicional e fica por sua conta. Recomendamos um investimento mínimo de R$ 1.500/mês para resultados consistentes. Nós gerenciamos e otimizamos suas campanhas.',
         ctaProductTitle: 'Ainda tem dúvidas sobre qual solução escolher?',
         ctaProductSubtitle: 'Agende uma conversa gratuita com nossos especialistas. Vamos analisar sua clínica e recomendar a melhor estratégia para seus objetivos.',
-        pricePeriod: '/mês',
 
         // CONTATO.HTML
         contactPageTitle: 'Vamos conversar sobre o <span class="highlight">futuro</span> da sua clínica?',
@@ -173,6 +203,9 @@ const translations = {
         formClinicName: 'Nome da clínica',
         formSpecialty: 'Especialidade principal',
         formRevenue: 'Faturamento mensal aproximado',
+        formInvestQuestion: 'Você já investe em marketing digital? *',
+        formInvestYes: 'Sim',
+        formInvestNo: 'Não',
         formMessage: 'Conte-nos mais sobre sua clínica e objetivos',
         formMessagePlaceholder: 'Descreva sua situação atual, principais desafios e o que espera alcançar...',
         formBtn: 'Solicitar consulta gratuita',
@@ -193,7 +226,15 @@ const translations = {
         breadcrumb: '← Voltar para todos os produtos',
         investmentTitle: 'Investimento',
         adsBudgetText: 'Verba de anúncios:',
+        adsBudgetBase: 'USD 200 (sugerido)',
+        adsBudgetFlow: 'USD 450 (sugerido)',
+        adsBudgetCore360: 'USD 1000 (sugerido)',
+        adsBudgetFullstack: 'USD 1500 (sugerido)',
         contractText: 'Contrato mínimo:',
+        contractBase: '3 meses',
+        contractFlow: '4 meses',
+        contractCore360: '6 meses',
+        contractFullstack: '6 meses',
         btnTalkToConsultant: 'Falar com um Consultor',
         deliverablesTitle: 'O que você <span class="highlight">recebe</span>',
         
@@ -354,6 +395,7 @@ const translations = {
         footerNav: 'Navegación',
         footerSolutions: 'Soluciones',
         footerContact: 'Contacto',
+        footerAddress: 'Avenida Paulista, 1374 – 16º Piso, Bela Vista, CEP 01310-100 | São Paulo – SP, Brasil',
         footerRights: 'Todos los derechos reservados.',
         footerPrivacy: 'Política de Privacidad',
         footerTerms: 'Términos de Uso',
@@ -366,7 +408,7 @@ const translations = {
         heroStat1: 'Dentistas atendidos',
         heroStat2: 'Aumento promedio de pacientes',
         heroStat3: 'ROI promedio de los clientes',
-        valuesTitle: '¿Por qué elegir a <span class="highlight">DentComm</span>?',
+        valuesTitle: 'Nuestros <span class="highlight">Valores</span>',
         valuesSubtitle: 'Los pilares que nos hacen únicos en el marketing dental de América Latina.',
         value1Title: 'Resultados Comprobados',
         value1Desc: 'Más de 500 dentistas han transformado sus clínicas con nosotros. ROI promedio de 8x en 6 meses.',
@@ -374,10 +416,12 @@ const translations = {
         value2Desc: 'Sistemas que trabajan 24/7 para captar, nutrir y convertir leads en pacientes reales.',
         value3Title: 'Especialización Dental',
         value3Desc: 'Entendemos las particularidades del mercado odontológico y creamos estrategias específicas.',
-        value4Title: 'Soporte Personalizado',
-        value4Desc: 'Acompañamiento dedicado con consultores especializados en el crecimiento de clínicas.',
         productsShowcaseTitle: 'Soluciones <span class="highlight">a medida</span> para cada momento',
         productsShowcaseSubtitle: 'Desde el dentista que está comenzando en el mundo digital hasta la clínica que busca escalar su operación.',
+        baseDesc: 'Ideal para dentistas que quieren comenzar en el marketing digital con una estructura sólida y resultados rápidos.',
+        flowDesc: 'Para clínicas que quieren automatizar procesos y escalar la captación de pacientes con inteligencia.',
+        core360Desc: 'Solución completa que integra marketing, ventas y gestión en un ecosistema único de crecimiento.',
+        fullstackDesc: 'Asumimos el 100% de tu operación digital para que te enfoques exclusivamente en lo que haces mejor: cuidar de los pacientes.',
         productsCtaText: '¿No sabes qué solución es ideal para ti?',
         productsCtaBtn: 'Habla con un especialista',
         roiTitle: 'Calcula el <span class="highlight">potencial</span> de tu clínica',
@@ -433,6 +477,18 @@ const translations = {
         aboutIntroP1: 'Pero para eso, necesita más que marketing bonito: necesita estrategia, claridad y retorno. Somos una agencia de marketing y automatización full service especializada en dentistas de América Latina. Nacimos para transformar la frustración de muchos profesionales en progreso real.',
         aboutIntroP2: 'En DentComm, no prometemos magia. <strong>Prometemos estructura. Rendimiento con posicionamiento.</strong> Ayudamos a los dentistas a crecer con inteligencia, respeto a la ciencia y enfoque en los resultados.',
         aboutResult: 'Más que marketing. <span class="display-highlight">¡Resultado!</span>',
+        valueClareza: 'Claridad',
+        valueClarezaDesc: 'Comunicación transparente e informes que entiendes.',
+        valueResultado: 'Resultado',
+        valueResultadoDesc: 'Enfoque total en el rendimiento y crecimiento medible.',
+        valueInteligencia: 'Inteligencia',
+        valueInteligenciaDesc: 'Estrategias basadas en datos para decisiones asertivas.',
+        valueTransformacao: 'Transformación',
+        valueTransformacaoDesc: 'Elevamos tu clínica a un nuevo nivel de referencia.',
+        valueParceria: 'Asociación',
+        valueParceriaDesc: 'Tu éxito es nuestro éxito. Crecemos juntos.',
+        valuePerformance: 'Rendimiento',
+        valuePerformanceDesc: 'Optimización continua para maximizar tu ROI.',
         aboutCureTitle: 'Cuando el marketing se hace bien, también <span class="text-highlight">cura</span>:',
         aboutCureText: 'Cura la <strong class="highlight">inseguridad</strong> de no saber por dónde empezar.<br>Cura el <strong class="highlight">estancamiento</strong> de una agenda que no crece.<br>Cura el <strong class="highlight">miedo a crecer</strong> de forma desorganizada.',
         aboutCtaTitle: 'Estamos listos para transformar tu viaje. <span class="highlight">¿Vamos juntos?</span>',
@@ -444,6 +500,20 @@ const translations = {
         compareTitle: 'Compara nuestras <span class="highlight">soluciones</span>',
         compareSubtitle: 'Encuentra la solución ideal para tu perfil y objetivos.',
         featureColumnHeader: 'Recursos',
+        productBase: 'Base',
+        productFlow: 'Flow',
+        productCore360: 'Core360',
+        productFullstack: 'Fullstack',
+        featureSite: 'Sitio web profesional',
+        featureGoogle: 'Google Ads',
+        featureSocial: 'Redes sociales',
+        featureAutomation: 'Automatización de leads',
+        featureCRM: 'CRM integrado',
+        featureWhatsapp: 'WhatsApp Business',
+        featureBI: 'BI y Analytics',
+        featureTeam: 'Gestión de equipo',
+        featureDedicated: 'Equipo dedicado',
+        featureSupport: 'Soporte 24/7',
         baseTagline: 'Esencial',
         flowTagline: 'Automatización',
         core360Tagline: 'Completo',
@@ -454,8 +524,10 @@ const translations = {
         gridTitle: 'Conoce cada <span class="highlight">solución</span> en detalle',
         badgeBeginner: 'Principiante',
         badgeAdvanced: 'Avanzado',
-        priceUponRequest: 'Bajo consulta',
+        priceUponRequest: 'bajo consulta',
         pricePersonalized: 'Personalizado',
+        priceFrom: 'Desde',
+        pricePeriod: '/mes',
         baseGridObjective: 'La estructura esencial para atraer pacientes, construir autoridad y entender el retorno de sus acciones de forma práctica.',
         flowGridObjective: 'Eleva el nivel de captación, conversión y gestión del viaje del paciente con automatización y escala inteligente.',
         core360GridObjective: 'Integra marketing, atención y gestión en un ecosistema completo para la previsibilidad de la agenda y un crecimiento sostenible.',
@@ -474,7 +546,6 @@ const translations = {
         faq5Answer: 'No, la inversión en medios pagados (Google Ads, Facebook Ads) es adicional y corre por tu cuenta. Recomendamos una inversión mínima de $300 USD/mes para resultados consistentes. Nosotros gestionamos y optimizamos tus campañas.',
         ctaProductTitle: '¿Aún tienes dudas sobre qué solución elegir?',
         ctaProductSubtitle: 'Agenda una conversación gratuita con nuestros especialistas. Analizaremos tu clínica y te recomendaremos la mejor estrategia para tus objetivos.',
-        pricePeriod: '/mes',
 
         // CONTATO.HTML
         contactPageTitle: '¿Hablamos sobre el <span class="highlight">futuro</span> de tu clínica?',
@@ -487,6 +558,9 @@ const translations = {
         formClinicName: 'Nombre de la clínica',
         formSpecialty: 'Especialidad principal',
         formRevenue: 'Facturación mensual aproximada',
+        formInvestQuestion: '¿Ya inviertes en marketing digital? *',
+        formInvestYes: 'Sí',
+        formInvestNo: 'No',
         formMessage: 'Cuéntanos más sobre tu clínica y objetivos',
         formMessagePlaceholder: 'Describe tu situación actual, principales desafíos y lo que esperas lograr...',
         formBtn: 'Solicitar consulta gratuita',
@@ -507,7 +581,15 @@ const translations = {
         breadcrumb: '← Volver a todos los productos',
         investmentTitle: 'Inversión',
         adsBudgetText: 'Presupuesto de anuncios:',
+        adsBudgetBase: 'USD 200 (sugerido)',
+        adsBudgetFlow: 'USD 450 (sugerido)',
+        adsBudgetCore360: 'USD 1000 (sugerido)',
+        adsBudgetFullstack: 'USD 1500 (sugerido)',
         contractText: 'Contrato mínimo:',
+        contractBase: '3 meses',
+        contractFlow: '4 meses',
+        contractCore360: '6 meses',
+        contractFullstack: '6 meses',
         btnTalkToConsultant: 'Hablar con un Consultor',
         deliverablesTitle: 'Lo que <span class="highlight">recibes</span>',
         
@@ -680,40 +762,62 @@ function setLanguage(lang) {
     });
 
     // 2. Troca de Moeda
-    const BRL_TO_USD_RATE = 5.0; // Taxa de conversão
+    const BRL_TO_USD_RATE = 5.4; // Taxa de conversão atualizada
     const priceElements = document.querySelectorAll('[data-price-brl]');
 
     priceElements.forEach(el => {
         const priceBRL = parseFloat(el.getAttribute('data-price-brl'));
         if (isNaN(priceBRL)) return;
-        
+
         let newPriceHTML = '';
+        const fromText = translations[lang].priceFrom || (lang === 'es' ? 'Desde' : 'A partir de');
+        const periodText = translations[lang].pricePeriod || '/mes';
 
         if (lang === 'es') {
             const priceUSD = Math.round(priceBRL / BRL_TO_USD_RATE);
-            const fromText = translations.es.priceFrom || 'Desde';
-            const periodText = translations.es.pricePeriod || '/mes';
-            newPriceHTML = `${fromText} <strong>$${priceUSD}</strong> ${periodText}`;
+            if (el.classList.contains('investment-card__price')) {
+                 newPriceHTML = `${fromText} <strong>$${priceUSD.toLocaleString('en-US')}</strong> ${periodText}`;
+            } else if (el.classList.contains('price')) { // Para a tabela de comparação
+                 newPriceHTML = `$${priceUSD.toLocaleString('en-US')}${periodText}`;
+            }
+             else {
+                newPriceHTML = `<span class="price-value">$${priceUSD.toLocaleString('en-US')}</span><span class="price-period">${periodText}</span>`;
+            }
         } else {
             const formattedBRL = priceBRL.toLocaleString('pt-BR');
-            const fromText = translations.pt.priceFrom || 'A partir de';
-            const periodText = translations.pt.pricePeriod || '/mês';
-            newPriceHTML = `${fromText} <strong>R$ ${formattedBRL}</strong> ${periodText}`;
+             if (el.classList.contains('investment-card__price')) {
+                 newPriceHTML = `${fromText} <strong>R$ ${formattedBRL}</strong> ${periodText}`;
+            } else if (el.classList.contains('price')) { // Para a tabela de comparação
+                 newPriceHTML = `R$ ${formattedBRL}${periodText}`;
+            }
+            else {
+                 newPriceHTML = `<span class="price-value">R$ ${formattedBRL}</span><span class="price-period">${periodText}</span>`;
+            }
         }
         el.innerHTML = newPriceHTML;
     });
+     // Lida com o preço "Sob Consulta"
+    const personalizedPriceElements = document.querySelectorAll('[data-key="pricePersonalized"]');
+    personalizedPriceElements.forEach(el => {
+        const parent = el.parentElement;
+        if(parent.querySelector('[data-key="priceUponRequest"]')) {
+            if (lang === 'es') {
+                el.innerHTML = translations.es.pricePersonalized;
+                parent.querySelector('[data-key="priceUponRequest"]').innerHTML = translations.es.priceUponRequest;
+            } else {
+                el.innerHTML = translations.pt.pricePersonalized;
+                parent.querySelector('[data-key="priceUponRequest"]').innerHTML = translations.pt.priceUponRequest;
+            }
+        }
+    });
 
-    // 3. Ajuste da Calculadora de ROI
+
+    // 3. Ajuste da Calculadora de ROI e outros textos dependentes de moeda
     const ticketLabel = document.querySelector('[data-key="roiInputTicket"]');
     const budgetLabel = document.querySelector('[data-key="roiInputBudget"]');
     if (ticketLabel && budgetLabel) {
-        if (lang === 'es') {
-            ticketLabel.innerHTML = 'Ticket promedio ($)';
-            budgetLabel.innerHTML = 'Presupuesto marketing ($)';
-        } else {
-            ticketLabel.innerHTML = 'Ticket médio (R$)';
-            budgetLabel.innerHTML = 'Orçamento marketing (R$)';
-        }
+        ticketLabel.innerHTML = translations[lang].roiInputTicket;
+        budgetLabel.innerHTML = translations[lang].roiInputBudget;
     }
 }
 
@@ -721,34 +825,27 @@ function setLanguage(lang) {
  * Inicializa o seletor de idiomas.
  */
 function initLanguageSwitcher() {
-    const langPtBtn = document.getElementById('lang-pt');
-    const langEsBtn = document.getElementById('lang-es');
-    if (!langPtBtn || !langEsBtn) return;
+    const langSwitcherBtn = document.getElementById('lang-switcher-btn');
+    if (!langSwitcherBtn) return;
 
-    const updateButtons = (selectedLang) => {
-        if (selectedLang === 'es') {
-            langEsBtn.classList.add('active');
-            langPtBtn.classList.remove('active');
-        } else {
-            langPtBtn.classList.add('active');
-            langEsBtn.classList.remove('active');
-        }
+    let currentLang = localStorage.getItem('language') || 'pt';
+
+    const updateButtonFlag = (lang) => {
+        langSwitcherBtn.innerHTML = lang === 'es' ? '🇪🇸' : '🇧🇷';
     };
+    
+    // Set initial state
+    setLanguage(currentLang);
+    updateButtonFlag(currentLang);
 
-    const savedLang = localStorage.getItem('language') || 'pt';
-    setLanguage(savedLang);
-    updateButtons(savedLang);
-
-    langPtBtn.addEventListener('click', () => {
-        setLanguage('pt');
-        localStorage.setItem('language', 'pt');
-        updateButtons('pt');
-    });
-
-    langEsBtn.addEventListener('click', () => {
-        setLanguage('es');
-        localStorage.setItem('language', 'es');
-        updateButtons('es');
+    langSwitcherBtn.addEventListener('click', () => {
+        // Toggle language
+        currentLang = currentLang === 'pt' ? 'es' : 'pt';
+        localStorage.setItem('language', currentLang);
+        
+        // Update UI
+        setLanguage(currentLang);
+        updateButtonFlag(currentLang);
     });
 }
 
@@ -759,18 +856,18 @@ function initThemeToggle() {
     const themeToggle = document.getElementById('theme-toggle');
     if (!themeToggle) return;
     
+    const setTheme = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    };
+
     const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    if (savedTheme === 'dark') {
-        themeToggle.classList.add('active');
-    }
+    setTheme(savedTheme);
 
     themeToggle.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        themeToggle.classList.toggle('active');
+        setTheme(newTheme);
     });
 }
 
@@ -784,12 +881,16 @@ function initContactForm() {
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const phoneInput = document.getElementById('phone');
+    const specialtySelect = document.getElementById('specialty');
+    const revenueSelect = document.getElementById('monthly-revenue');
+    const investsRadioGroup = document.querySelectorAll('input[name="invests"]');
     const submitBtn = document.getElementById('submit-btn');
     const formStatus = document.getElementById('form-status');
 
     const validateField = (input, validationFn, errorMessage) => {
-        const errorSpan = input.parentElement.querySelector('.error-message');
-        if (!input || !errorSpan) return true;
+        const formGroup = input.closest('.form-group, .form-group-radio');
+        const errorSpan = formGroup.querySelector('.error-message');
+        if (!formGroup || !errorSpan) return true;
 
         if (validationFn(input.value)) {
             input.classList.remove('error');
@@ -802,13 +903,33 @@ function initContactForm() {
         }
     };
 
+    const validateRadio = (radioGroup) => {
+        for (const radio of radioGroup) {
+            if (radio.checked) return true;
+        }
+        return false;
+    };
+    
     const validateName = (name) => name.trim() !== '';
     const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email).toLowerCase());
     const validatePhone = (phone) => /^\+?[0-9\s-()]{10,15}$/.test(phone.replace(/\D/g, ''));
+    const validateSelect = (value) => value.trim() !== '';
 
     const errorMessages = {
-        pt: { name: 'O nome é obrigatório.', email: 'Por favor, insira um e-mail válido.', phone: 'Insira um telefone válido com DDD.' },
-        es: { name: 'El nombre es obligatorio.', email: 'Por favor, ingrese un e-mail válido.', phone: 'Ingrese un teléfono válido con código de área.' }
+        pt: { 
+            name: 'O nome é obrigatório.', 
+            email: 'Por favor, insira um e-mail válido.', 
+            phone: 'Insira um telefone válido com DDD.',
+            select: 'Por favor, selecione uma opção.',
+            radio: 'Por favor, selecione uma opção.'
+        },
+        es: { 
+            name: 'El nombre es obligatorio.', 
+            email: 'Por favor, ingrese un e-mail válido.', 
+            phone: 'Ingrese un teléfono válido con código de área.',
+            select: 'Por favor, seleccione una opción.',
+            radio: 'Por favor, seleccione una opción.'
+        }
     };
 
     const getErrorMessage = (field) => {
@@ -819,6 +940,15 @@ function initContactForm() {
     nameInput.addEventListener('input', () => validateField(nameInput, validateName, getErrorMessage('name')));
     emailInput.addEventListener('input', () => validateField(emailInput, validateEmail, getErrorMessage('email')));
     phoneInput.addEventListener('input', () => validateField(phoneInput, validatePhone, getErrorMessage('phone')));
+    specialtySelect.addEventListener('change', () => validateField(specialtySelect, validateSelect, getErrorMessage('select')));
+    revenueSelect.addEventListener('change', () => validateField(revenueSelect, validateSelect, getErrorMessage('select')));
+    investsRadioGroup.forEach(radio => radio.addEventListener('change', () => {
+        const formGroup = radio.closest('.form-group-radio');
+        const errorSpan = formGroup.querySelector('.error-message');
+        if (validateRadio(investsRadioGroup)) {
+            errorSpan.textContent = '';
+        }
+    }));
 
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -826,8 +956,17 @@ function initContactForm() {
         const isNameValid = validateField(nameInput, validateName, getErrorMessage('name'));
         const isEmailValid = validateField(emailInput, validateEmail, getErrorMessage('email'));
         const isPhoneValid = validateField(phoneInput, validatePhone, getErrorMessage('phone'));
+        const isSpecialtyValid = validateField(specialtySelect, validateSelect, getErrorMessage('select'));
+        const isRevenueValid = validateField(revenueSelect, validateSelect, getErrorMessage('select'));
+        
+        let isInvestsValid = validateRadio(investsRadioGroup);
+        if (!isInvestsValid) {
+            const formGroup = investsRadioGroup[0].closest('.form-group-radio');
+            const errorSpan = formGroup.querySelector('.error-message');
+            errorSpan.textContent = getErrorMessage('radio');
+        }
 
-        if (isNameValid && isEmailValid && isPhoneValid) {
+        if (isNameValid && isEmailValid && isPhoneValid && isSpecialtyValid && isRevenueValid && isInvestsValid) {
             submitBtn.textContent = 'Enviando...';
             submitBtn.disabled = true;
             setTimeout(() => {
@@ -843,6 +982,7 @@ function initContactForm() {
         }
     });
 }
+
 
 /**
  * Inicializa a calculadora de ROI.
@@ -894,28 +1034,28 @@ function calculateROI() {
 
 
 /**
- * Inicializa o carregamento lazy de imagens.
+ * Inicializa o carregamento lazy de imagens e vídeos.
  */
 function initLazyLoading() {
-    const lazyImages = document.querySelectorAll('img[data-src]');
+    const lazyMedia = document.querySelectorAll('img[data-src], video[data-src]');
     
     if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
+        const mediaObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                    img.classList.remove('lazy');
-                    observer.unobserve(img);
+                    const media = entry.target;
+                    media.src = media.dataset.src;
+                    media.removeAttribute('data-src');
+                    media.classList.remove('lazy');
+                    observer.unobserve(media);
                 }
             });
         });
-        lazyImages.forEach(img => imageObserver.observe(img));
-    } else {
-        lazyImages.forEach(img => {
-            img.src = img.dataset.src;
-            img.removeAttribute('data-src');
+        lazyMedia.forEach(media => mediaObserver.observe(media));
+    } else { // Fallback para browsers antigos
+        lazyMedia.forEach(media => {
+            media.src = media.dataset.src;
+            media.removeAttribute('data-src');
         });
     }
 }
@@ -966,28 +1106,36 @@ function initSmoothScroll() {
  * Inicializa a funcionalidade de FAQ (acordeão).
  */
 function initFAQ() {
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        if (!question || !answer) return;
+
         question.addEventListener('click', () => {
-            const answer = question.nextElementSibling;
             const isExpanded = question.getAttribute('aria-expanded') === 'true';
 
-            faqQuestions.forEach(q => {
-                if (q !== question) {
-                    q.setAttribute('aria-expanded', 'false');
-                    q.nextElementSibling.style.maxHeight = '0';
+            // Fecha todos os outros
+            faqItems.forEach(otherItem => {
+                if(otherItem !== item) {
+                    otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = '0';
                 }
             });
 
-            question.setAttribute('aria-expanded', String(!isExpanded));
-            if (!isExpanded) {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-            } else {
+            // Abre ou fecha o item clicado
+            if (isExpanded) {
+                question.setAttribute('aria-expanded', 'false');
                 answer.style.maxHeight = '0';
+            } else {
+                question.setAttribute('aria-expanded', 'true');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
             }
         });
     });
 }
+
 
 /**
  * Inicializa o slider de depoimentos.
@@ -997,18 +1145,21 @@ function initTestimonialSlider() {
     if (!slider) return;
 
     const navBtns = document.querySelectorAll('.testimonial-nav-btn');
-    const testimonials = document.querySelectorAll('.testimonial-card');
+    const testimonials = document.querySelectorAll('.testimonials__slider .testimonial-card');
     if (navBtns.length === 0 || testimonials.length === 0) return;
 
     let currentSlide = 0;
     let slideInterval;
 
     function showSlide(index) {
-        testimonials.forEach((t) => { t.style.display = 'none'; t.classList.remove('active'); });
+        testimonials.forEach((t, i) => { 
+            t.style.display = 'none'; 
+            t.classList.remove('active');
+        });
         navBtns.forEach(b => b.classList.remove('active'));
 
         testimonials[index].style.display = 'block';
-        testimonials[index].classList.add('active');
+        setTimeout(() => testimonials[index].classList.add('active'), 10); // Pequeno delay para a animação
         navBtns[index].classList.add('active');
         currentSlide = index;
     }

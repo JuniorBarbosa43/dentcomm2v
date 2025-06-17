@@ -1,12 +1,12 @@
 /*
  * DENTCOMM - FOLHA DE ESTILO PREMIUM
- * Versão Final: 5.0.0
+ * Versão Final: 5.0.4 (Polimento Final Corrigido)
  * Descrição: Arquivo CSS completo com todas as correções e melhorias.
  */
 
 /* 1. IMPORTS E VARIÁVEIS
 ------------------------------------ */
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap');
 
 :root {
     /* Cores principais (Identidade Visual Oficial) */
@@ -36,6 +36,7 @@
     /* Tipografia (Fonte Global Hanken Grotesk) */
     --font-primary: 'Hanken Grotesk', sans-serif;
     --font-display: 'Playfair Display', serif;
+    --font-cursive: 'Dancing Script', cursive; /* Fonte cursiva adicionada */
     
     /* Espaçamentos */
     --header-height: 80px;
@@ -146,7 +147,7 @@ ul {
     list-style: none;
 }
 
-img {
+img, video {
     max-width: 100%;
     height: auto;
     display: block;
@@ -212,6 +213,15 @@ input, textarea, select {
     font-style: italic;
     font-weight: 600;
 }
+
+/* NOVA CLASSE PARA DESTAQUES CURSIVOS */
+.font-cursive-highlight {
+    font-family: var(--font-cursive);
+    font-weight: 700;
+    font-size: 1.2em; /* Ajuste o tamanho conforme necessário */
+    color: var(--primary-cyan);
+}
+
 
 .display-highlight {
     font-family: var(--font-display);
@@ -502,61 +512,70 @@ input, textarea, select {
 .header__actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
-/* Dark mode toggle */
+/* CORREÇÃO/MELHORIA: Botão Dark Mode com ícones Sol/Lua */
 .theme-toggle {
-    width: 50px;
-    height: 26px;
-    background: var(--primary-gray);
-    border-radius: 13px;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
     cursor: pointer;
-    transition: var(--transition-smooth);
-}
-
-.theme-toggle.active {
-    background: var(--primary-cyan);
-}
-
-.theme-toggle::before {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 22px;
-    height: 22px;
-    background: white;
+    position: relative;
+    overflow: hidden;
     border-radius: 50%;
     transition: var(--transition-smooth);
 }
-
-.theme-toggle.active::before {
-    transform: translateX(24px);
+.theme-toggle:hover {
+    transform: scale(1.1);
+    background-color: rgba(0,0,0,0.05);
+}
+[data-theme="dark"] .theme-toggle:hover {
+    background-color: rgba(255,255,255,0.1);
 }
 
-/* Language switcher */
-.lang-switcher {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(22, 254, 237, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-lg);
+.theme-toggle__icon {
+    font-size: 24px; /* Tamanho dos emojis/icones */
+    position: absolute;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
+.theme-toggle .sun-icon {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.theme-toggle .moon-icon {
+    transform: translateY(100%) scale(0);
+    opacity: 0;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+    transform: translateY(-100%) scale(0);
+    opacity: 0;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+
+/* CORREÇÃO/MELHORIA: Botões de idioma com bandeiras */
 .lang-switcher__btn {
-    font-weight: 600;
-    color: var(--primary-gray);
-    transition: var(--transition-fast);
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--radius-sm);
+    font-size: 24px; /* Tamanho da bandeira */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: var(--transition-smooth);
 }
-
-.lang-switcher__btn.active {
-    color: var(--primary-cyan);
-    background: rgba(22, 254, 237, 0.2);
+.lang-switcher__btn:hover {
+    transform: scale(1.1);
 }
 
 /* Mobile menu */
@@ -726,9 +745,8 @@ input, textarea, select {
 }
 
 .values__grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -742,8 +760,6 @@ input, textarea, select {
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(22, 254, 237, 0.1);
-    flex: 1 1 280px;
-    max-width: 320px;
 }
 
 .value-card::before {
@@ -768,15 +784,8 @@ input, textarea, select {
 }
 
 .value-icon {
-    width: 64px;
-    height: 64px;
+    font-size: 2.5rem;
     margin: 0 auto 1.5rem auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--gradient-primary);
-    border-radius: 50%;
-    color: var(--primary-dark);
 }
 
 .value-card h3 {
@@ -926,8 +935,8 @@ input, textarea, select {
     font-size: 1.125rem;
 }
 
-/* 9. PRODUCTS LIST (VITRINE)
------------------------------------- */
+/* 9. PRODUCTS LIST (VITRINE) & COMPARISON TABLE
+------------------------------------------------- */
 .products-comparison {
     padding: var(--section-padding);
     background: var(--bg-card);
@@ -976,18 +985,21 @@ input, textarea, select {
     position: relative;
 }
 
+/* CORREÇÃO/MELHORIA: Destaque visual mais forte para a coluna Flow */
 .product-column.featured {
     background: rgba(22, 254, 237, 0.05);
-    border-left: 2px solid var(--primary-cyan);
-    border-right: 2px solid var(--primary-cyan);
+    border-left: 3px solid var(--primary-cyan);
+    border-right: 3px solid var(--primary-cyan);
+    transform: scale(1.02);
 }
+
 .product-header {
-margin-top:5ch;
+    margin-top: 1rem; /* Ajustado para melhor alinhamento */
 }
 
 .product-header .badge {
     position: relative;
-    top: -14px; /* CORREÇÃO: Posição ajustada */
+    top: -1rem;
     left: 50%;
     transform: translateX(-50%);
     background: var(--gradient-primary);
@@ -999,17 +1011,10 @@ margin-top:5ch;
     z-index: 1;
 }
 
-.container th {
-
-    margin: -50px;
-
-}
-
 .product-header .badge.premium {
     background: var(--gradient-secondary);
     color: white;
 }
-
 
 .product-header h3 {
     font-size: 1.25rem;
@@ -1029,21 +1034,19 @@ margin-top:5ch;
     color: var(--primary-cyan);
 }
 
-.feature-value {
+/* CORREÇÃO/MELHORIA: Estilo para check e X na tabela */
+.feature-check {
     font-size: 1.5rem;
     font-weight: 600;
-}
-
-.feature-value:not(:empty)::before {
-    content: "✓";
     color: var(--primary-cyan);
 }
 
-.feature-value:empty::before {
-    content: "—";
+.feature-cross {
+    font-size: 1.25rem;
     color: var(--primary-gray);
-    font-weight: 400;
+    opacity: 0.5;
 }
+
 
 .cta-row td {
     border-bottom: none;
@@ -1062,7 +1065,6 @@ margin-top:5ch;
     margin-top: 3rem;
 }
 
-
 .product-summary-card {
     background: var(--bg-card);
     padding: 2.5rem 2rem;
@@ -1077,9 +1079,23 @@ margin-top:5ch;
     flex-direction: column;
 }
 
-/* Regra para o último card se expandir quando estiver sozinho */
-.product-summary-card:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
+/* CORREÇÃO/MELHORIA: Classe para o card do plano Fullstack */
+.product-summary-card--fullwidth {
+    grid-column: 1 / -1; /* Ocupa a largura total da grid */
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.product-summary-card--fullwidth .product-summary-card__header {
+    flex-basis: 20%;
+}
+.product-summary-card--fullwidth .product-summary-card__content {
+    flex-basis: 50%;
+}
+.product-summary-card--fullwidth .product-summary-card__cta-wrapper {
+    flex-basis: 30%;
+    text-align: right;
 }
 
 .product-summary-card.featured {
@@ -1450,6 +1466,40 @@ margin-top:5ch;
     opacity: 0.7;
 }
 
+/* CORREÇÃO/MELHORIA: Polimento do Modo Escuro na Newsletter e outros */
+[data-theme="dark"] .newsletter {
+    background: var(--black);
+}
+
+[data-theme="dark"] .newsletter__title {
+    color: var(--primary-dark);
+}
+[data-theme="dark"] .newsletter__subtitle {
+    color: #c1c1c1;
+    opacity: 1;
+}
+[data-theme="dark"] .newsletter__input {
+    background: #2a2a2a;
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--primary-dark);
+}
+[data-theme="dark"] .newsletter__input::placeholder {
+    color: var(--primary-gray);
+}
+[data-theme="dark"] .testimonial__text {
+    color: #e1e1e1;
+    opacity: 0.9;
+}
+[data-theme="dark"] .product-card__desc,
+[data-theme="dark"] .product-summary-card__objective,
+[data-theme="dark"] .section-subtitle,
+[data-theme="dark"] .product-header__objective,
+[data-theme="dark"] .info-card,
+[data-theme="dark"] .value-card p {
+    color: #c1c1c1;
+    opacity: 1;
+}
+
 /* 14. CTA SECTIONS
 ------------------------------------ */
 .cta-section,
@@ -1469,7 +1519,18 @@ margin-top:5ch;
 .cta-subtitle,
 .cta-final__subtitle {
     margin-bottom: 2rem;
-    opacity: 0.8;
+    opacity: 1; 
+    color: var(--primary-dark);
+}
+
+/* CORREÇÃO: Garante contraste do texto .highlight em fundos verdes */
+.cta-section .highlight,
+.cta-final .highlight,
+.highlight-section .highlight {
+    background: none !important;
+    -webkit-text-fill-color: var(--primary-dark) !important;
+    color: var(--primary-dark) !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Sombra sutil para destacar */
 }
 
 .cta-actions,
@@ -1480,6 +1541,19 @@ margin-top:5ch;
     justify-content: center;
     margin-bottom: 2rem;
 }
+
+/* Ajustes nos botões dentro do CTA para garantir visibilidade */
+.cta-section .btn--outline,
+.cta-final .btn--outline {
+    border-color: var(--primary-dark);
+    color: var(--primary-dark);
+}
+.cta-section .btn--outline:hover,
+.cta-final .btn--outline:hover {
+    background: var(--primary-dark);
+    color: var(--white);
+}
+
 
 .cta-final__guarantees {
     display: flex;
@@ -1573,6 +1647,26 @@ margin-top:5ch;
 .contact-form textarea {
     resize: vertical;
     min-height: 120px;
+}
+
+/* CORREÇÃO/MELHORIA: Estilização para radio buttons */
+.form-group-radio {
+    display: flex;
+    flex-direction: column;
+}
+.radio-options {
+    display: flex;
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+.radio-option input[type="radio"] {
+    accent-color: var(--primary-cyan);
 }
 
 .form-status {
@@ -1726,6 +1820,12 @@ margin-top:5ch;
     gap: 0.5rem;
 }
 
+.footer__column ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
 .footer__column a, .footer__column li {
     opacity: 0.8;
     transition: var(--transition-smooth);
@@ -1812,6 +1912,16 @@ margin-top:5ch;
     .hero__stats {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
+
+    .product-summary-card--fullwidth {
+        grid-column: auto; /* Reverte para layout de coluna única */
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+    .product-summary-card--fullwidth .product-summary-card__cta-wrapper {
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1893,6 +2003,10 @@ margin-top:5ch;
         flex-direction: column;
         text-align: center;
     }
+
+    .about-intro__container {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1941,7 +2055,81 @@ margin-top:5ch;
     }
 }
 
-/* Novas estilizações para páginas de produto individuais (produto-*.html) */
+/* 19. ESTILOS PÁGINA "QUEM SOMOS"
+------------------------------------ */
+.about-intro {
+    padding: var(--section-padding);
+}
+.about-intro__container {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+.about-intro__text {
+    flex: 1;
+}
+.about-intro__text h2 {
+    margin-bottom: 2rem;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.3;
+}
+.about-intro__text p {
+    margin-bottom: 1.5rem;
+}
+.about-intro__image {
+    flex: 1;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+.about-intro__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.text-highlight {
+    color: var(--primary-cyan);
+    font-style: italic;
+}
+
+.highlight-section {
+    padding: 4rem 0;
+    background: var(--gradient-primary);
+    text-align: center;
+}
+.highlight-section h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--primary-dark);
+    margin: 0;
+}
+
+.about-cure {
+    padding: var(--section-padding);
+    text-align: center;
+}
+.about-cure__container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.about-cure h3 {
+    margin-bottom: 2rem;
+}
+.about-cure p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+.cta-section__container {
+    text-align: center;
+}
+.cta-section__container h2 {
+    margin-bottom: 2rem;
+    color: var(--primary-dark);
+}
+
+
+/* 20. ESTILOS PÁGINAS DE PRODUTO
+------------------------------------ */
 .product-page main {
     padding-top: var(--header-height);
 }
@@ -1992,13 +2180,52 @@ margin-top:5ch;
     min-height: 300px;
 }
 
-.product-details__visual img {
+.product-details__visual img, 
+.product-details__visual video {
     width: 100%;
     height: auto;
     max-height: 400px;
-    object-fit: cover; /* Mudei para cover para preencher melhor */
+    object-fit: cover;
     border-radius: var(--radius-lg);
 }
+
+/* CORREÇÃO/MELHORIA: Novo layout visual para seções de info */
+.info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.info-block h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border-left: 3px solid var(--primary-cyan);
+    color: var(--primary-gray);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: var(--transition-smooth);
+}
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+[data-theme="dark"] .info-card {
+    background: var(--black);
+    color: var(--primary-gray);
+}
+
 
 /* Coluna da direita com card de investimento */
 .product-details__investment .investment-card {
@@ -2124,7 +2351,7 @@ margin-top:5ch;
     }
 }
 
-/* ETAPA 4: FUNCIONALIDADES AVANÇADAS */
+/* 21. FUNCIONALIDADES AVANÇADAS */
 
 /* Estilos para Validação do Formulário */
 .form-group {

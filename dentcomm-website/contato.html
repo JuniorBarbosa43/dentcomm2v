@@ -13,7 +13,7 @@
     <header class="header">
         <div class="container header__container">
             <a href="index.html" class="header__logo">
-                <img src="assets/images/logo.svg" alt="Logo DentComm">
+                <img src="assets/images/logo.svg" alt="Logo DentComm" loading="lazy">
             </a>
             <nav class="nav">
                 <ul class="nav__list">
@@ -24,12 +24,11 @@
                 </ul>
             </nav>
             <div class="header__actions">
-                <div class="theme-toggle" id="theme-toggle" aria-label="Alternar tema"></div>
-                <div class="lang-switcher">
-                    <button id="lang-pt" class="lang-switcher__btn active">PT</button>
-                    <span>/</span>
-                    <button id="lang-es" class="lang-switcher__btn">ES</button>
-                </div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+                    <span class="theme-toggle__icon sun-icon">☀️</span>
+                    <span class="theme-toggle__icon moon-icon">🌙</span>
+                </button>
+                <button id="lang-switcher-btn" class="lang-switcher__btn" aria-label="Alterar Idioma"></button>
                 <button class="nav-toggle" aria-label="Abrir menu">
                     <span class="nav-toggle__bar"></span>
                     <span class="nav-toggle__bar"></span>
@@ -68,6 +67,14 @@
                             <div class="form-group"><label for="specialty" data-key="formSpecialty">Especialidade principal</label><select id="specialty" name="specialty" class="form-input"><option value="" data-key="selectOption">Selecione</option><option value="clinica-geral">Clínica Geral</option><option value="ortodontia">Ortodontia</option><option value="implantodontia">Implantodontia</option><option value="estetica">Odontologia Estética</option><option value="endodontia">Endodontia</option><option value="periodontia">Periodontia</option><option value="cirurgia">Cirurgia Oral</option><option value="pediatria">Odontopediatria</option><option value="outras">Outras</option></select><span class="error-message"></span></div>
                             <div class="form-group"><label for="monthly-revenue" data-key="formRevenue">Faturamento mensal aproximado</label><select id="monthly-revenue" name="monthly-revenue" class="form-input"><option value="" data-key="selectOption">Selecione</option><option value="ate-20k">Até R$ 20.000</option><option value="20k-50k">R$ 20.000 - R$ 50.000</option><option value="50k-100k">R$ 50.000 - R$ 100.000</option><option value="100k-200k">R$ 100.000 - R$ 200.000</option><option value="acima-200k">Acima de R$ 200.000</option></select><span class="error-message"></span></div>
                         </div>
+                        <div class="form-group form-group-radio">
+                            <label data-key="formInvestQuestion">Você já investe em marketing digital? *</label>
+                            <div class="radio-options">
+                                <label class="radio-option"><input type="radio" name="invests" value="yes" required><span data-key="formInvestYes">Sim</span></label>
+                                <label class="radio-option"><input type="radio" name="invests" value="no" required><span data-key="formInvestNo">Não</span></label>
+                            </div>
+                            <span class="error-message"></span>
+                        </div>
                         <div class="form-group"><label for="message" data-key="formMessage">Conte-nos mais sobre sua clínica e objetivos</label><textarea id="message" name="message" class="form-input" rows="4" data-key="formMessagePlaceholder" placeholder="Descreva sua situação atual, principais desafios e o que espera alcançar..."></textarea><span class="error-message"></span></div>
                         <button type="submit" class="btn btn--primary btn--large" id="submit-btn" data-key="formBtn">Solicitar consulta gratuita</button>
                         <div id="form-status"></div>
@@ -80,7 +87,7 @@
                         <h3 data-key="contactInfoTitle">Informações de contato</h3>
                         <div class="contact-info-item"><div class="contact-info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/></svg></div><div><strong data-key="contactInfoEmail">E-mail</strong><p>contato@dentcomm.com</p></div></div>
                         <div class="contact-info-item"><div class="contact-info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/></svg></div><div><strong data-key="contactInfoPhone">Telefone / WhatsApp</strong><p>+55 (11) 99999-8888</p></div></div>
-                        <div class="contact-info-item"><div class="contact-info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg></div><div><strong data-key="contactInfoAddress">Endereço</strong><p>Av. Paulista, 1234<br>São Paulo, SP, Brasil</p></div></div>
+                        <div class="contact-info-item"><div class="contact-info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg></div><div><strong data-key="contactInfoAddress">Endereço</strong><p data-key="footerAddress">Avenida Paulista, 1374 – 16º Andar, Bela Vista, CEP 01310-100 | São Paulo – SP, Brasil</p></div></div>
                         <div class="contact-info-item"><div class="contact-info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/></svg></div><div><strong data-key="contactInfoHours">Horário de atendimento</strong><p>Segunda a sexta: 8h às 18h<br>Sábado: 8h às 12h</p></div></div>
                     </div>
                     
@@ -101,7 +108,7 @@
             <div class="container">
                 <h2 class="section-title" data-key="mapTitle">Nossa <span class="highlight">localização</span></h2>
                 <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.145945119782!2d-46.6565715844069!3d-23.56309936754639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0x24434674724b9b49!2sAv.%20Paulista%2C%201234%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1626884439097!5m2!1spt-BR!2sbr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.197543002604!2d-46.65809188493103!3d-23.56133936754466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0x13e047f63507324!2sAv.%20Paulista%2C%201374%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1687000000000!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>
@@ -110,13 +117,20 @@
     <footer class="footer">
         <div class="container footer__container">
             <div class="footer__brand">
-                <a href="index.html"><img src="assets/images/logo.svg" alt="Logo DentComm" class="footer__logo"></a>
+                <a href="index.html"><img src="assets/images/logo.svg" alt="Logo DentComm" class="footer__logo" loading="lazy"></a>
                 <p class="footer__tagline" data-key="footerTagline">Transformando clínicas dentais em referências de mercado através de marketing inteligente e resultados comprovados.</p>
             </div>
             <div class="footer__links">
                 <div class="footer__column"><h4 data-key="footerNav">Navegação</h4><ul><li><a href="index.html" data-key="navHome">Início</a></li><li><a href="quem-somos.html" data-key="navAbout">Quem Somos</a></li><li><a href="produtos.html" data-key="navProducts">Produtos</a></li><li><a href="contato.html" data-key="navContact">Contato</a></li></ul></div>
                 <div class="footer__column"><h4 data-key="footerSolutions">Soluções</h4><ul><li><a href="produto-base.html">DentComm Base</a></li><li><a href="produto-flow.html">DentComm Flow</a></li><li><a href="produto-core360.html">DentComm Core360</a></li><li><a href="produto-fullstack.html">DentComm Fullstack</a></li></ul></div>
-                <div class="footer__column"><h4 data-key="footerContact">Contato</h4><ul><li>contato@dentcomm.com</li><li>+55 (11) 99999-8888</li><li>São Paulo, Brasil</li></ul></div>
+                <div class="footer__column">
+                    <h4 data-key="footerContact">Contato</h4>
+                    <ul>
+                        <li>contato@dentcomm.com</li>
+                        <li>+55 (11) 99999-8888</li>
+                        <li data-key="footerAddress">Avenida Paulista, 1374 – 16º Andar, Bela Vista, CEP 01310-100 | São Paulo – SP, Brasil</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="footer__bottom">
