@@ -1,6 +1,6 @@
 /*
  * DENTCOMM - FOLHA DE ESTILO PREMIUM
- * Versão Final: 5.0.5 (Correção Final de Bandeiras e Contraste)
+ * Versão Final: 5.0.5 (Lançamento)
  * Descrição: Arquivo CSS completo com todas as correções e melhorias.
  */
 
@@ -461,6 +461,16 @@ input, textarea, select {
     height: 100%;
 }
 
+.header__logo .logo-light,
+[data-theme="dark"] .header__logo .logo-dark {
+    display: block;
+}
+
+.header__logo .logo-dark,
+[data-theme="dark"] .header__logo .logo-light {
+    display: none;
+}
+
 .header__logo img {
     height: 40px;
     width: auto;
@@ -533,6 +543,7 @@ input, textarea, select {
 .theme-toggle:hover {
     transform: scale(1.1);
     background-color: rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-sm);
 }
 [data-theme="dark"] .theme-toggle:hover {
     background-color: rgba(255,255,255,0.1);
@@ -565,28 +576,26 @@ input, textarea, select {
 }
 
 
-/* CORREÇÃO/MELHORIA: Botões de idioma com imagens de bandeiras */
+/* CORREÇÃO/MELHORIA: Botões de idioma com bandeiras */
 .lang-switcher__btn {
+    font-size: 24px; /* Tamanho da bandeira */
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
     transition: var(--transition-smooth);
-    width: 28px; /* Largura do botão */
-    height: 28px; /* Altura do botão */
+    line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+.lang-switcher__btn img {
+    height: 24px;
+    width: auto;
+    border-radius: 2px;
+}
 .lang-switcher__btn:hover {
     transform: scale(1.1);
-}
-#lang-switcher-flag {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
 
 /* Mobile menu */
@@ -1489,6 +1498,10 @@ input, textarea, select {
     color: #c1c1c1;
     opacity: 1;
 }
+[data-theme="dark"] .newsletter__disclaimer {
+    color: var(--primary-gray);
+    opacity: 1;
+}
 [data-theme="dark"] .newsletter__input {
     background: #2a2a2a;
     border-color: rgba(255, 255, 255, 0.3);
@@ -1505,6 +1518,7 @@ input, textarea, select {
 [data-theme="dark"] .product-summary-card__objective,
 [data-theme="dark"] .section-subtitle,
 [data-theme="dark"] .product-header__objective,
+[data-theme="dark"] .info-card,
 [data-theme="dark"] .value-card p {
     color: #c1c1c1;
     opacity: 1;
@@ -1534,19 +1548,18 @@ input, textarea, select {
 }
 
 /* CORREÇÃO: Garante contraste do texto .highlight em fundos verdes */
-.cta-section .highlight, .cta-final .highlight, .highlight-section .display-highlight {
+.cta-section .highlight,
+.cta-final .highlight,
+.highlight-section .display-highlight {
     background: none !important;
     -webkit-background-clip: initial !important;
     -webkit-text-fill-color: var(--primary-dark) !important;
+    background-clip: initial !important;
     color: var(--primary-dark) !important;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Sombra sutil para destacar */
 }
-
-[data-theme="dark"] .cta-section .highlight, 
-[data-theme="dark"] .cta-final .highlight, 
-[data-theme="dark"] .highlight-section .display-highlight {
-    -webkit-text-fill-color: #FFFFFF !important;
-    color: #FFFFFF !important;
+.highlight-section h2 {
+    color: var(--white);
 }
 
 .cta-actions,
@@ -2388,4 +2401,62 @@ input, textarea, select {
     font-size: 0.875rem;
     font-weight: 500;
     display: block;
+}
+/*
+ * ===============================================
+ * CORREÇÃO FINAL 2.0: Sombra em Textos Apenas no Modo Escuro
+ * ===============================================
+ * Define o texto como escuro no modo claro (padrão) e como
+ * branco com sombra apenas no modo escuro.
+*/
+
+/* ESTILO PADRÃO (MODO CLARO) */
+.cta-section,
+.cta-final,
+.highlight-section {
+    color: var(--primary-dark);
+}
+
+.cta-section .highlight,
+.cta-final .highlight,
+.highlight-section .display-highlight {
+    background: none !important;
+    -webkit-text-fill-color: inherit !important;
+    color: inherit !important;
+    text-shadow: none !important;
+}
+
+.cta-section .btn--outline,
+.cta-final .btn--outline {
+    color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.cta-section .btn--outline:hover,
+.cta-final .btn--outline:hover {
+    background-color: var(--primary-dark);
+    color: #FFFFFF;
+}
+
+/* ESTILO PARA MODO ESCURO (SOBREPÕE O PADRÃO) */
+[data-theme="dark"] .cta-section *,
+[data-theme="dark"] .cta-final *,
+[data-theme="dark"] .highlight-section * {
+    color: #FFFFFF !important;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6) !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    background: none !important;
+}
+
+[data-theme="dark"] .cta-section .btn--primary,
+[data-theme="dark"] .cta-final .btn--primary {
+    color: var(--primary-dark) !important;
+    text-shadow: none !important;
+}
+
+[data-theme="dark"] .cta-section .btn--outline:hover,
+[data-theme="dark"] .cta-final .btn--outline:hover {
+    color: var(--black) !important; /* Cor preta para texto no botão branco */
+    background-color: #FFFFFF;
+    text-shadow: none !important;
 }

@@ -1,6 +1,6 @@
 /**
  * DENTCOMM - JAVASCRIPT MODERNO E FUNCIONAL
- * Versão Final: 5.0.4 (Polimento Final Corrigido)
+ * Versão Final: 5.0.5 (Lançamento)
  * Descrição: Script completo com todas as funcionalidades solicitadas,
  * incluindo tradução completa (PT/ES), modo claro/escuro, troca de moeda,
  * calculadora de ROI, validação de formulário aprimorada e otimizações de performance.
@@ -822,34 +822,31 @@ function setLanguage(lang) {
 }
 
 /**
- * Inicializa o seletor de idiomas com um botão único que alterna as bandeiras.
+ * Inicializa o seletor de idiomas.
  */
 function initLanguageSwitcher() {
-    // 1. Encontra o botão único no documento
     const langSwitcherBtn = document.getElementById('lang-switcher-btn');
-    if (!langSwitcherBtn) return; // Se o botão não existir, a função para.
+    if (!langSwitcherBtn) return;
 
-    // 2. Pega o idioma salvo no navegador do usuário, ou define 'pt' como padrão.
     let currentLang = localStorage.getItem('language') || 'pt';
 
-    // 3. Função para atualizar a bandeira no botão
     const updateButtonFlag = (lang) => {
-        langSwitcherBtn.innerHTML = lang === 'es' ? '🇪🇸' : '🇧🇷';
+        // Usa imagens SVG da pasta assets
+        langSwitcherBtn.innerHTML = lang === 'es' 
+            ? `<img src="assets/images/bandeiras/ES.jpg" alt="Español">` 
+            : `<img src="assets/images/bandeiras/BR.jpg" alt="Português">`;
     };
     
-    // 4. Define o idioma e a bandeira corretos quando a página carrega
+    // Set initial state
     setLanguage(currentLang);
     updateButtonFlag(currentLang);
 
-    // 5. Adiciona o evento de clique ao botão
     langSwitcherBtn.addEventListener('click', () => {
-        // Alterna o idioma atual
+        // Toggle language
         currentLang = currentLang === 'pt' ? 'es' : 'pt';
-        
-        // Salva a nova escolha no navegador
         localStorage.setItem('language', currentLang);
         
-        // Atualiza todo o site com o novo idioma e a nova bandeira
+        // Update UI
         setLanguage(currentLang);
         updateButtonFlag(currentLang);
     });
@@ -1226,3 +1223,43 @@ function initScrollReveal() {
 
     elements.forEach(el => observer.observe(el));
 }
+
+/**
+ * Adiciona uma sombra de texto a todos os elementos com texto branco para melhorar a legibilidade.
+ * Este script é executado automaticamente assim que o conteúdo da página é carregado.
+ */
+function addShadowToWhiteText() {
+    // 1. Defina os elementos que você quer verificar. 
+    // Adicione mais tags se necessário (ex: 'div', 'button').
+    const selectors = 'p, h1, h2, h3, h4, h5, h6, li, a, span, label, strong';
+
+    // 2. Defina o estilo da sombra que será aplicada.
+    // Você pode personalizar aqui. Exemplos:
+    // '1px 1px 2px rgba(0, 0, 0, 0.7)' -> Sombra mais forte
+    // '0 0 8px black' -> Um brilho escuro ao redor do texto
+    const shadowStyle = '1px 1px 3px rgba(0, 0, 0, 0.6)';
+
+    // Encontra todos os elementos correspondentes na página
+    const elements = document.querySelectorAll(selectors);
+
+    // Itera sobre cada elemento encontrado
+    elements.forEach(element => {
+        try {
+            // Pega o estilo de cor 'computado' (o estilo final que o navegador aplica)
+            const style = window.getComputedStyle(element);
+            const color = style.color;
+
+            // Verifica se a cor é branca (rgb(255, 255, 255))
+            if (color === 'rgb(255, 255, 255)') {
+                
+                // Se a cor for branca, aplica a sombra de texto
+                element.style.textShadow = shadowStyle;
+            }
+        } catch (error) {
+            console.error('Não foi possível aplicar sombra no elemento:', element, error);
+        }
+    });
+}
+
+// Garante que o script seja executado apenas depois que todo o conteúdo da página for carregado
+document.addEventListener('DOMContentLoaded', addShadowToWhiteText);
